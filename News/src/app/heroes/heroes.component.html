@@ -1,0 +1,21 @@
+<!-- <h2>My Heroes</h2> -->
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)">
+    <span class="badge">{{hero.Title}}</span> {{hero.Rate}}
+  </li>
+</ul>
+
+<div *ngIf="selectedHero">
+
+  <!-- <h2>{{selectedHero.Rate | uppercase}} Details</h2> -->
+  <div><span>Title: </span>{{selectedHero.Title}}</div>
+  <div>
+    <label for="hero-Rate">News Rate: </label>
+    <input Title="hero-Rate" [(ngModel)]="selectedHero.Rate" placeholder="Rate">
+  </div>
+
+</div>
+
+
