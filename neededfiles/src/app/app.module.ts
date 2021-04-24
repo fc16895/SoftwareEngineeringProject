@@ -18,6 +18,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { BoardsComponent } from './boards/boards.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RatingsComponent } from './ratings/ratings.component';
+import { LinksComponent } from './links/links.component';
+import { LinkDetailComponent } from './link-detail/link-detail.component';
+import { LinkSearchComponent } from './link-search/link-search.component';
 
 @NgModule({
   imports: [
@@ -43,6 +46,9 @@ MatCardModule,
     HeroSearchComponent,
     BoardsComponent,
     RatingsComponent,
+    LinksComponent,
+    LinkDetailComponent,
+    LinkSearchComponent,
   ],
   bootstrap: [ AppComponent ]
 })
