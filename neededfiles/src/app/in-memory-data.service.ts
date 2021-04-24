@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Hero } from './hero';
 import { Rating } from './rating';
+import { Link } from './link';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,12 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 20, name: 'Tornado' }
     ];
 
+const links =[
+{name: 'BLM protest does this', imagePath:'/assets/sample.png'},
+{name: 'BLM protest does that', imagePath:'/assets/sample.png'},
+{name: 'BLM protest also does this other thing', imagePath:'/assets/sample.png'}
+]
+
 const ratings = [
 {value: 1},
 {value: 2},
@@ -28,7 +35,7 @@ const ratings = [
 ];
     
 
-return {heroes, ratings};
+return {heroes,links, ratings};
   }
 
 

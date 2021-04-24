@@ -6,13 +6,14 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { BoardsComponent } from './boards/boards.component';
 import { RatingsComponent } from './ratings/ratings.component';
-
+import { LinksComponent } from './links/links.component';
+import { LinkDetailComponent } from './link-detail/link-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: HeroDetailComponent },
-  { path: 'heroes', component: HeroesComponent },
+{ path: 'detail/:name', component: LinkDetailComponent },  
+{ path: 'links', component: LinksComponent },  
 {path: 'ratings', component: RatingsComponent},
 { path: 'boards', component: BoardsComponent }
 ];
