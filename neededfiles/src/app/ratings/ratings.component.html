@@ -1,0 +1,17 @@
+<h2>My Ratings</h2>
+<ul class="ratings">
+  <li *ngFor="let rating of ratings">
+    <span class="badge">{{rating.value}}</span>
+  </li>
+</ul>
+
+
+<div>
+<!--  <label id="new-rating">Rating value: </label>-->
+  <input type="number" #rating />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click) ="add(convertToNumber(rating.value));rating.value=''">
+Add rating    
+  </button>
+</div>

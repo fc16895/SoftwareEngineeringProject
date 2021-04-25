@@ -1,0 +1,50 @@
+/* AppComponent's private CSS styles */
+.header{
+  min-width: 960px;
+  height: 60px;
+  background-color: rgba(131, 131, 131, 0.63);
+}
+
+.nav{
+  width: 960px;
+  margin: 0 30px;
+  display: flex;
+  height: 58px;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img{
+   height: 170px;
+   width: auto;
+   margin-top: 5px;
+}
+
+.navList{
+  display: flex;
+}
+
+.navItem{
+  width: 170px;
+  height: 55px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 18px;
+  color: rgb(46, 46, 46);
+}
+.navItem:hover{
+  background: rgba(48, 48, 48, 0.219);
+  text-decoration:none;
+}
+.navItem:focus{
+  outline: none;
+}
+
+.bkg img{
+  position: absolute;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  z-index: -1;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
