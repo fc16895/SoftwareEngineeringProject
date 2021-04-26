@@ -1,30 +1,26 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
+const Link = require('../../link');
+mongoose.set('useCreateIndex', true);
+var url = 'mongodb://localhost:27017/goose';
+mongoose.connect(url);
 
 /* GET api listing. */
-router.post('/:name', function (req, res) {
-  res.header("Content-Type",'application/json');
-  var name = req.params.name.toUpperCase();
-
-    Link.find({ name: name.toUpperCase() }, function (err, links) {
+router.post('/', function (req, res) {
+	res.header("Content-Type",'application/json');
+	var name = req.body.name;
+	var aLink={$set : { rating : req.body.rating }};console.log(req.body.rating);
+    Link.updateOne({ name: name },aLink, function (err, links) {
         if (err) {
             res.send({ message: 'error' });
             return;
         }
 
-        var aLink = links[0];
-
-        aLink.rating = req.body.rating;
-
-        aLink.save(function (err, data) {
-            if (err) {
-                res.send({ message: 'error' });
-                return;
-            }
-
-            console.log(`done ${data}`);
-            res.send({ message: 'done', data: aLink });
-        });
+        else{
+			console.log('updated');
+			res.send({ message: 'done' });
+		}
     }); 
 });
 

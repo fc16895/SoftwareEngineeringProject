@@ -7,10 +7,8 @@ mongoose.set('useCreateIndex', true);
 var url = 'mongodb://localhost:27017/goose';
 mongoose.connect(url);
 
-/* GET api listing. */
 router.post('/', function (req, res) {
   res.header("Content-Type",'application/json');
-  console.log(111);
     var newLink = new Link({
         name: req.body.name,
         imagePath: req.body.imagePath,

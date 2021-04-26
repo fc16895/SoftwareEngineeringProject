@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Rating } from '../rating';
+//import { Rating } from '../rating';
 //import { RATINGS } from '../mock-ratings';
-import { RatingService } from '../rating.service';
-
+//import { RatingService } from '../rating.service';
+import { OutputService } from '../output.service';
+import { UpdateService } from '../update.service';
+import { Link } from '../link';
 
 @Component({
   selector: 'app-ratings',
@@ -11,47 +13,53 @@ import { RatingService } from '../rating.service';
 })
 export class RatingsComponent implements OnInit {
 
-ratings: Rating[] = [];
+links: Link[]=[];
+j: number=0;
 
-constructor(private ratingService: RatingService) { }
+constructor(private outputService: OutputService,private updateService: UpdateService) { }
 
 
-getRatings(): void {
-  this.ratingService.getRatings()
-      .subscribe(ratings => this.ratings = ratings);
+getLinks(): void {
+  this.outputService.getLinks()
+      .subscribe(links => this.links=links);
 }
 
   ngOnInit(){
-  this.getRatings();
+  this.getLinks();
  
  }
 
 
 add(value: number): void {
-  if (!value) { return; }
-  this.ratingService.addRating({ value } as Rating)
-    .subscribe(rating => {
-      this.ratings.push(rating);
-    });
+	if (!value) { return; }
+	if(this.j>=3){return;}
+	var toChange: Link={
+		name: this.links[this.j].name,
+		imagePath: this.links[this.j].imagePath,
+		rating: value
+	};console.log(this.j);
+	console.log('tochange'+toChange.name);
+	this.updateService.update(toChange as Link)
+		.subscribe();
+	this.getLinks();
+	this.j++;
 }
 
 convertToNumber(string: string): number {
 
-var flag = false;
-
-
-	for (var i = 0; i < string.length; i++) {
-            if (string.charCodeAt(i)<48 || string.charCodeAt(i)>57){
-		flag = true;
+	var flag = false;
+	if(string.length>2){
+		return 0;
+	}
+	if(string.length==2){
+		if(string.charCodeAt(0)!=49 || string.charCodeAt(1)!=48){
+			return 0;
 		}
+		return 10;
 	}
-
-        if (flag == false){
-	return parseInt(string);		
-	}
-	else{
-	return 0;
-	}
+	if(string.charCodeAt(0)<49 || string.charCodeAt(0)>57)
+		return 0;
+	return string.charCodeAt(0)-48;
    }
 
 }

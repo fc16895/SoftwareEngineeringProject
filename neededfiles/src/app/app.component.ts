@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InputService } from './input.service';
 import { OutputService } from './output.service';
+import { UpdateService } from './update.service';
 import { Link } from './link';
 
 const LinkData =[
@@ -15,11 +16,10 @@ const LinkData =[
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-	 constructor(private inputService: InputService) { 
+	 constructor(private inputService: InputService,private updateService: UpdateService) { 
 	}
 
   ngOnInit(): void {
-	  console.log('put');
   	this.putLinks();
   }
   title = 'CauseVisualiser';
@@ -27,6 +27,7 @@ export class AppComponent {
 	var j;
 	for(j=0;j<LinkData.length;j++){
 		this.inputService.input(LinkData[j]).subscribe();
+		this.updateService.update(LinkData[j]).subscribe();
 	}
   }
 }

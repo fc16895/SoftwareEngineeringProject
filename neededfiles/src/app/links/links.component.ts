@@ -29,7 +29,6 @@ selectedLink?: Link;
   ngOnInit(): void {
 /* 	  console.log('put');
   	this.putLinks(); */
-	console.log('get');
 	this.getLinks();
   }
 

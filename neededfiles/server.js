@@ -21,7 +21,7 @@ mongoose.connect(url); */
 app.use(express.static(path.join(__dirname,'dist/CauseVisualiser')));
 app.use('/newlink', newlink);
 app.use('/getall', getall);
-app.use('/update/:name', update);
+app.use('/update', update);
 
 /* app.post('/newlink', function (req, res) {console.log(111);
     var newLink = new Link({

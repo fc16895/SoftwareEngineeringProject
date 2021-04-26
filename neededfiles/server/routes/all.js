@@ -14,7 +14,6 @@ router.get('/', function (req, res) {
             res.send({ message: 'error' });
             return;
         }
-		console.log(links);
         res.json(links);
     });
 });

@@ -14,7 +14,7 @@ export class OutputService {
   
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
-  public getLinks(): Observable<Link[]>{console.log('getlinks');
+  public getLinks(): Observable<Link[]>{
     return this.http.get<Link[]>(this.REST_API_SERVER)
 	.pipe(
     tap(_ => this.log('fetched links')),
