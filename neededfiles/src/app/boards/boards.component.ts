@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {InMemoryDataService} from '../in-memory-data.service';
+//import {InMemoryDataService} from '../in-memory-data.service';
 import { RatingService } from '../rating.service';
 import {Rating} from '../rating';
 
@@ -14,7 +14,7 @@ export class BoardsComponent implements OnInit {
 
 myRatings: Rating[] = [];
   
-  constructor(inmemorydataService: InMemoryDataService, ratingService: RatingService) {
+  constructor( ratingService: RatingService) {
     //image location
 
 

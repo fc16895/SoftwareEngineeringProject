@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var linkSchema = new Schema({
-    name: String,
-    url: String,
+    name: {type: String,unique: true},
+    imagePath: String,
 	rating: Number
 });
 

@@ -26,7 +26,7 @@ const links =[
 {name: 'BLM protest does this', imagePath:'/assets/sample.png'},
 {name: 'BLM protest does that', imagePath:'/assets/sample.png'},
 {name: 'BLM protest also does this other thing', imagePath:'/assets/sample.png'}
-]
+];
 
 const ratings = [
 {value: 1},
