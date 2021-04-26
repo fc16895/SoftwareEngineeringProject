@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
-import { Link } from '../link';
-import { LinkService } from '../link.service';
+//import { Hero } from '../hero';
+//import { HeroService } from '../hero.service';
+//import { Link } from '../link';
+//import { LinkService } from '../link.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { LinkService } from '../link.service';
 })
 export class DashboardComponent implements OnInit {
 
-links: Link[] = [];
+/* links: Link[] = [];
 
   constructor(private linkService: LinkService) { }
 
@@ -23,5 +23,7 @@ links: Link[] = [];
   getLinks(): void {
     this.linkService.getLinks()
       .subscribe(links => this.links = links.slice(1, 5));
-  }
+  } */
+  constructor(){}
+  ngOnInit(){}
 }

@@ -1,35 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 //import {InMemoryDataService} from '../in-memory-data.service';
-import { RatingService } from '../rating.service';
-import {Rating} from '../rating';
+//import { RatingService } from '../rating.service';
+//import {Rating} from '../rating';
+import { Link } from '../link';
+import { OutputService } from '../output.service';
 
 @Component({
   selector: 'app-boards',
   templateUrl: './boards.component.html',
   styleUrls: ['./boards.component.css']
 })
+
 export class BoardsComponent implements OnInit {
 
-   ImagePath: string;
+	ImagePath: String;
 
-myRatings: Rating[] = [];
+	links: Link[]=[];
   
-  constructor( ratingService: RatingService) {
-    //image location
-
-
-ratingService.getRatings().subscribe(rating => this.myRatings = rating);
-
-this.ImagePath = '/assets/sample.png';
-
-
-
-
-
-}
-
-
-  ngOnInit(): void {
+  constructor( private outputService: OutputService) {
+	  this.ImagePath = '/assets/sample.png';
   }
+    //image location
+	
+	
+	
+	ngOnInit(): void {
+/* 	  console.log('put');
+  	this.putLinks(); */
+	this.getLinks();
+  }
+	getLinks(): void {
+		this.outputService.getLinks()
+		.subscribe(links => this.links=links);
+	}
+
+
+//ratingService.getRatings().subscribe(rating => this.myRatings = rating);
+
+
+
 
 }
