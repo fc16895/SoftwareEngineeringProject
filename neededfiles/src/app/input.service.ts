@@ -10,7 +10,7 @@ import { Link } from './link';
 })
 export class InputService {
 
-  private REST_API_SERVER = "http://localhost:3000/newlink";
+  private REST_API_SERVER = "http://localhost:9999/newlink";
   httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };

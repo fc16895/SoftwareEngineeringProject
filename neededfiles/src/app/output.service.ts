@@ -10,7 +10,7 @@ import { Link } from './link';
 })
 export class OutputService {
 
-  private REST_API_SERVER = "http://localhost:3000/getall";
+  private REST_API_SERVER = "http://localhost:9999/getall";
   
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
