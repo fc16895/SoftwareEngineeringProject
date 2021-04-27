@@ -1,5 +1,5 @@
 export interface Link {
-  name: string;
-  imagePath: string;
+  name: String;
+  imagePath: String;
   rating: number
 }

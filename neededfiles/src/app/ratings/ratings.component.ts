@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { OutputService } from '../output.service';
 import { UpdateService } from '../update.service';
 import { Link } from '../link';
+import {DashboardComponent } from '../dashboard/dashboard.component'
 
 @Component({
   selector: 'app-ratings',
@@ -20,8 +21,11 @@ constructor(private outputService: OutputService,private updateService: UpdateSe
 
 
 getLinks(): void {
-  this.outputService.getLinks()
-      .subscribe(links => this.links=links);
+	this.outputService.getLinks(DashboardComponent.toSearch)
+		.subscribe(links => {
+			this.links=links;
+			console.log(this.links);
+		});
 }
 
   ngOnInit(){

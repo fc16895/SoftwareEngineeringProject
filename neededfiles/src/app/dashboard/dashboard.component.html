@@ -6,12 +6,12 @@
     </div>
     <div class="form-box">
         <input type="text" class="search-field HM"
-        placeholder="Topic">
+        placeholder="Topic" #toSearch>
 
         <input type="text" class="search-field Topic"
         placeholder="Business">
         <a [routerLink]="['/links']" routerLinkActive="router-link-active" >
-        <button class="search-btn" type="button">Search</button>
+        <button class="search-btn" type="button" (click) ="save(toSearch.value)">Search</button>
         </a>
     </div>
 </form>

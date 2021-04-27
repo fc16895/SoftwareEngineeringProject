@@ -4,6 +4,7 @@ import { Link } from '../link';
 //import { LinkService } from '../link.service';
 import { InputService } from '../input.service';
 import { OutputService } from '../output.service';
+import {DashboardComponent } from '../dashboard/dashboard.component'
 
 /* const LinkData: Link[] =[
 {name: 'BLM protest does this', imagePath:'/assets/sample.png'},
@@ -21,7 +22,6 @@ export class LinksComponent implements OnInit {
 
 links: Link[] = [];
 selectedLink?: Link;
-
 //  constructor(private linkService: LinkService) { }
   constructor(private inputService: InputService,private outputService: OutputService) { 
 	}
@@ -29,7 +29,7 @@ selectedLink?: Link;
   ngOnInit(): void {
 /* 	  console.log('put');
   	this.putLinks(); */
-	this.getLinks();
+	this.getLinks();console.log(DashboardComponent.toSearch);
   }
 
 
@@ -50,11 +50,11 @@ onSelect(link: Link): void {
 //}
 
 getLinks(): void {
-  this.outputService.getLinks()
-      .subscribe(links => {
-		  this.links=links;
-		  console.log(this.links);
-	  });
+	this.outputService.getLinks(DashboardComponent.toSearch)
+		.subscribe(links => {
+			this.links=links;
+			console.log(this.links);
+		});
 }
 
 

@@ -10,12 +10,16 @@ import { Link } from './link';
 })
 export class OutputService {
 
+  httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
   private REST_API_SERVER = "http://localhost:9999/getall";
   
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
-  public getLinks(): Observable<Link[]>{
-    return this.http.get<Link[]>(this.REST_API_SERVER)
+  public getLinks(name: String): Observable<Link[]>{
+    return this.http.get<Link[]>(this.REST_API_SERVER+"/search?name="+name,this.httpOptions)
 	.pipe(
     tap(_ => this.log('fetched links')),
       catchError(this.handleError<Link[]>('getLinks', []))

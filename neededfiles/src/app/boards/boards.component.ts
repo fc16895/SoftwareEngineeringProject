@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 //import {Rating} from '../rating';
 import { Link } from '../link';
 import { OutputService } from '../output.service';
+import {DashboardComponent } from '../dashboard/dashboard.component'
 
 @Component({
   selector: 'app-boards',
@@ -29,10 +30,13 @@ export class BoardsComponent implements OnInit {
   	this.putLinks(); */
 	this.getLinks();
   }
-	getLinks(): void {
-		this.outputService.getLinks()
-		.subscribe(links => this.links=links);
-	}
+getLinks(): void {
+	this.outputService.getLinks(DashboardComponent.toSearch)
+		.subscribe(links => {
+			this.links=links;
+			console.log(this.links);
+		});
+}
 
 
 //ratingService.getRatings().subscribe(rating => this.myRatings = rating);
