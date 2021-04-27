@@ -1,8 +1,17 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-<a routerLink="/links">Links</a>  
-  <a routerLink="/ratings">Ratings</a>
-  <a routerLink="/boards">Board</a>
-</nav>
+<div class="bkg">
+  <img src="./assets/img/background.jpeg" width="100%" alt="">
+</div>
+<div class="header">
+  <div class="nav">
+    <div class="logo">
+      <img src="./assets/img/logo.png" alt="">
+    </div>
+    <div class="navList">
+      <div class="navItem" routerLink="/dashboard">Dashboard</div>
+      <div class="navItem" routerLink="/links">Links</div>
+      <div class="navItem" routerLink="/ratings">Ratings</div>
+      <div class="navItem" routerLink="/boards">Board</div>
+    </div>
+  </div>
+</div>
 <router-outlet></router-outlet>

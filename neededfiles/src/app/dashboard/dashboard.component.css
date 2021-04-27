@@ -1,50 +1,60 @@
 /* DashboardComponent's private CSS styles */
 
-h2 {
-  text-align: center;
-}
-
-.heroes-menu {
+body{
+  margin: 0;
   padding: 0;
-  margin: auto;
-  max-width: 1000px;
-
-  /* flexbox */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: flex-start;
-  align-items: flex-start;
 }
 
-a {
-  background-color: #3f525c;
-  border-radius: 2px;
-  padding: 1rem;
-  font-size: 1.2rem;
-  text-decoration: none;
-  display: inline-block;
-  color: #fff;
+h1{
+  color: #5f4141;
+  margin-bottom: 30px;
+  margin-top: 150px;
+  font-size: 50px;
+  letter-spacing: 3px;
   text-align: center;
-  width: 100%;
-  min-width: 70px;
-  margin: .5rem auto;
-  box-sizing: border-box;
-
-  /* flexbox */
-  order: 0;
-  flex: 0 1 auto;
-  align-self: auto;
+  word-spacing: 8px;
+}
+h2{
+  text-align: center;
+  margin-bottom: 30px;
+  color: rgb(90, 90, 90);
+}
+.search-field{
+  width: 300px;
+  height: 30px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  margin-left: 20px;
+  font-style: italic;
+}
+.Topic{
+  width: 400px;
+}
+.HM{
+  width: 300px;
+}
+.search-btn{
+  height: 50px;
+  width: 150px;
+  border: none;
+  background-color: #3f525c;
+  border-radius: 25px; 
+  margin-left: 30px;
+  color: rgb(238, 238, 238);
+}
+.search-btn:hover{
+  background: #253741;
+  cursor: pointer;
+}
+.search-btn:focus{
+  outline: none;
 }
 
-@media (min-width: 600px) {
-  a {
-    width: 18%;
-    box-sizing: content-box;
-  }
-}
-
-a:hover {
-  background-color: #000;
+.form-box{
+  background: rgba(117, 117, 117, 0.5);
+  padding: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
 }
