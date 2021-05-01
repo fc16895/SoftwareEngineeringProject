@@ -2,14 +2,12 @@
 <form>
     <div class="title">
     <h1>Find News For You</h1>
-    <h2>Loads of news you want to know, give you a visualiser for your news.<br></h2>
+    <h2>Loads of news you want to know, give a visualiser for your news.<br></h2>
     </div>
     <div class="form-box">
-        <input type="text" class="search-field HM"
+        <input type="text" class="search-field Topic"
         placeholder="Topic" #toSearch>
 
-        <input type="text" class="search-field Topic"
-        placeholder="Business">
         <a [routerLink]="['/links']" routerLinkActive="router-link-active" >
         <button class="search-btn" type="button" (click) ="save(toSearch.value)">Search</button>
         </a>

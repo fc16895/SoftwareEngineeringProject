@@ -1,17 +1,23 @@
-<h2>My Ratings</h2>
-<ul class="links">
-  <li *ngFor="let link of links">
-    <span class="badge">{{link.name}}</span><span class="badge">{{link.rating}}</span>
-  </li>
-</ul>
+<h1>My Ratings</h1>
 
-
-<div>
+<h2>Please give every link a rating(score 1 to 10)</h2>
+<div class="rating">
 <!--  <label id="new-rating">Rating value: </label>-->
-  <input type="number" #rating />
+  <input class="input" type="number" #rating />
 
   <!-- (click) passes input value to add() and then clears the input -->
   <button class="add-button" (click) ="add(convertToNumber(rating.value));rating.value=''">
 Add rating    
   </button>
 </div>
+
+<div class="links">
+  <div class="lr" *ngFor="let link of links">
+    <div class="badge1">{{link.name}}</div><br><div class="badge2">{{link.rating}}</div>
+  </div>
+</div>
+
+
+
+
+
