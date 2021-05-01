@@ -1,4 +1,4 @@
-# CAUSE VISUALISER
+# CAUSEVISUALISER
 
 ### Team:
 
