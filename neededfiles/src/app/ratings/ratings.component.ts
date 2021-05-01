@@ -36,7 +36,7 @@ getLinks(): void {
 
 add(value: number): void {
 	if (!value) { return; }
-	if(this.j>=3){return;}
+	if(this.j>=this.links.length){return;}
 	var toChange: Link={
 		name: this.links[this.j].name,
 		imagePath: this.links[this.j].imagePath,
