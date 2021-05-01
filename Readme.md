@@ -77,6 +77,6 @@ Additionally, the education sector has been heavily coupled with gamification te
 
 These areas where gamification has been hugely implemented for the self-improvement of the users seem to have yielded either postive results, or neutral ones.
 
-###### Current industry review
+#### Current industry review
 
 ###### 
