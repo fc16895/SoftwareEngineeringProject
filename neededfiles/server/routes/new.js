@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const Link = require('../../link');
 
 mongoose.set('useCreateIndex', true);
-var url = 'mongodb://localhost:27017/goose';
-mongoose.connect(url);
+/* var url = 'mongodb://localhost:27017/goose';
+mongoose.connect(url); */
 
 router.post('/', function (req, res) {
   res.header("Content-Type",'application/json');

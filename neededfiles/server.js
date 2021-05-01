@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
-
+const db = require('./db');
 const Link = require('./link');
 const newlink = require('./server/routes/new');
 const getall = require('./server/routes/all');
