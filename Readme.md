@@ -25,11 +25,11 @@ This shows that there has been an increase in the variety of information that yo
 
 ### Literature review:
 
-###### Migration of news sources
+#### Migration of news sources
 
 As younger generations have been progressively incorportating the active world, the way people consume news has progressively shifted from TV news and newspapers to digital news through their laptops and smartphones. The importance of the former has been declining as "In the UK, the average number of minutes of television viewing for the population as a whole declined from a high of 241 minutes per day in 2012 to 216 minutes per day in 2015, a 10% decline in three years” (The Guardian, 2016). Additionally, " newspaper circulation has been declining for the whole decade[(the 2000's)]" (Wake Tech, 2016). The loss of consumers of both of these two sources of news has been reflected in an incredible increase in the number of people to obtain their societal information from social media. The Reuters Institute of Journalism at Oxford University issued a study in 2016 showing that a vast portion of the main social media platforms, when it came to people under 25 years old, used these mainly for the consumption of news: ""Instagram news consumers were 11% of the social media population", "Twitter was statistically tied at 12%" and "Facebook leads with 36% of social media consumers using the social media giant for consuming news." (Reuters, 2016).
 
-###### Different motivations and hence different results
+#### Different motivations and hence different results
 
 As stated in the report issued by the Reuters Institute, the motivation for the consumption of news for the younger audiences has drastically changed. Whereas older generations used to and still to this day consume news in order to get informed about serious, important topics, people belonging to the "Generation Z" mainly seek news with two main goals:
 
@@ -40,18 +40,18 @@ As stated in the report issued by the Reuters Institute, the motivation for the 
 
 This shift in motivations for the consumption of news could be both the result of and the cause of the prevalence of social media as a source of information: social media provides a more enjoyable platform, therefore the content is to be personalised to one's idea of self-imporvement and enjoyment / younger generations, by living in a world of abundance of information and goods, seek thus self-improvement and enjoyment rather than just becoming literate about the worlds' issues, therefore social media content is deemed more attactive. In any case, the motivations for reading news amongst young people stem from a search of "what it can do for them as individuals - rather than for society as whole" like older ppeople used to. (Reuters, date ??). 
 
-###### Consequences
+#### Consequences
 
 These changes in the reasons for people to read the news have entailed, logically, a change in the content portrayed as news and thus have been "redefining
 what constitutes news" (Reuters, date ??). As Derek Thomson states in *The Facebook effect in the news* (The Atlantic, 2014), only part of each Facebook user's feed deals with actual "news" (politics, important societal events, etc). The stats mentioned earlier (Reuters, 2016) about the amount of users on differnet social platforms that only wanted to consumer news from them also indicate another underlying phenomenon: those news are surrounded, or rather "drowned", in a sea of content that ranges from humour to self-help, passing by gossip. In *The Facebook effect in the news* (The Atlantic, 2014), the list of the most viral stories from Buzzfeed is displayed, and shows a wide variety of topics: terrorist attacks, music shows and why Ryan Gosling won't eat his cereal. In addition to this wide variety of topics, social media platforms make use algorithms to perosnalise the offer of content to the user, thus "creat[ing] a “filter bubble”—a unique universe of information for each person—that potentially leads to consuming a narrow selection of news sources and perspectives" (Pariser, 2011). Additionally, the spread of misleading, false, or inaccurate news is way more easiliy vehicled by social media platforms than by TV boradcasting stations and newspapers. (Zimmer, Franziska, et al., 2019). 
 
 This three-factor system has caused yoounger generations to be disengaged with actual "news" are by making them focus on content that produces "high-arousal emotions" (Berger, Milkman, 2012). (MAYBE HAD CONSEQUENCE OF LACK OF SERIOUS NEWS FOR YOUNG PEOPLE ??).
 
-###### Promotion of news consumption methods
+#### Promotion of news consumption methods
 
 Very little to no literature exists on the previous reasearch about new methods seeking to promote the consumption of news in people. This reinforces the idea of an unstoppable (in the sense that nothing has been done to stop such a trend) change in the source of news, expressed by Mike Vorhaus in the Forbes article *People Increasingly Turn To Social Media For News* (2020): "As newspapers have fallen dramatically in usage, and the national newscasts have dropped in ratings, the swing to new sources of information has accelerated considerably."
 
-###### Use of user representation through gamification for the development of new habits
+#### Use of user representation through gamification for the development of new habits
 
 According to *A brief history on gamification* (2015), the usage of gaming tools for purposes other than pure entertainment dates from 2002, when the *Serious Games* programs where created by Ben Sawyer and David Rejecsk to motivate and shape behaviours in american soldiers under simulated war environments. Since then, many other games were programmed with the purpose of teaching and shaping positive beahviours outside of the belligerant context, like *Games for Change* (created by Barry Joseph, Benjamin Stokes and Suzanne Seggerman to bring awareness and knowledge to the public about world-problems) and *Games for Health* (created by Ben Sawyer too witrh the objective of  improving health and the delivery of healthcare). 
 
@@ -67,12 +67,7 @@ However, according to Palmer, Lunceford and Patton [19] main key-elements of gam
 - Social connection: accompanied by Internet, social networks and mobile
   applications of all sorts, gamified solutions boost group dynamics. 
 
-
-
-
 This trend in an increasing motivation for the development of self-improvement programs through gamifcation has been paired up with an increasing demand in the quality of aethestics and technology from the users. 
-
-
 
 The use of gamification for self-improvement has been widely present in health related contexts (weight control, eating habits, exercise, smoking, hand hygiene, etc.). According to Daniel Johnson et. al. (*Gamification for health and wellbeing: A systematic review of the literature*, 2016) whoc carried out a study on 19 papers that report empirical evidence on the effect of gamification on health and wellbeing, just over half (59%) of the studies reported positive effects, whereas 41% reported mixed or neutral effects. This indicates the presence of only a slight adavantage of using gamification for the promotion of health-related habits over the absence of gamification. 
 
@@ -80,11 +75,7 @@ Other self-improvement sectors have know gamification, such as the promotion of 
 
 Additionally, the education sector has been heavily coupled with gamification techniques in the past years. Jenni Majuri et. al. point out in *Gamification of education and learning: A review of empirical* (2018) that out of 128 empirical reasearch papers on the effects of gamification on learning and education, "a considerable majority of the studies reportedmainly positively oriented results (71% of them) (...) [but] there is also a significant amount of research with null or mixed results (23% of them)".
 
-
-
 These areas where gamification has been hugely implemented for the self-improvement of the users seem to have yielded either postive results, or neutral ones.
-
-
 
 ###### Current industry review
 
