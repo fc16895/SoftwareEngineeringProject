@@ -5,9 +5,9 @@ import { UpdateService } from './update.service';
 import { Link } from './link';
 
 const LinkData =[
-{name: 'BLM protest does this', imagePath:'/assets/sample.png',rating: 0},
-{name: 'BLM protest does that', imagePath:'/assets/sample.png',rating: 0},
-{name: 'BLM protest also does this other thing', imagePath:'/assets/sample.png',rating: 0}
+	{name: 'BLM protest does this', imagePath:'/assets/sample.png',rating: 0},
+	{name: 'BLM protest does that', imagePath:'/assets/sample.png',rating: 0},
+	{name: 'BLM protest also does this other thing', imagePath:'/assets/sample.png',rating: 0}
 ];
 
 @Component({

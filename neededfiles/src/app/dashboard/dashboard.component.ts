@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  static toSearch : String = '?';
+  static toSearch : String = '????';
 /* links: Link[] = [];
 
   constructor(private linkService: LinkService) { }
