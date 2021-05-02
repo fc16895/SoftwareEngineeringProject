@@ -36,12 +36,12 @@ getLinks(): void {
 
 add(value: number): void {
 	if (!value) { return; }
-	if(this.j>=this.links.length){return;}
+	if(this.j>=this.links.length){return;}console.log(this.j);console.log(this.links.length);
 	var toChange: Link={
 		name: this.links[this.j].name,
 		imagePath: this.links[this.j].imagePath,
 		rating: value
-	};console.log(this.j);
+	};
 	console.log('tochange'+toChange.name);
 	this.updateService.update(toChange as Link)
 		.subscribe();
