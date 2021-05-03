@@ -4,13 +4,14 @@
 ### Group Working Methods
 
 Our group use the agile model and the scrum method. Compared with waterfull model, the agile model has some advantages, like it is focused client process. So, it makes sure that the client is continuously involved during every stage. Moreover, agile team is likely to provide a better result from the development projects beause  they are motivated and self-organized. However, it also has some limitations. It will take more time to implement an agile method compared to other development methodologies.
+![image text](https://github.com/fc16895/SoftwareEngineeringProject/blob/master/img/agile.png)
 
 Scrum project management involves breaking down a complex project into smaller, more manageable parts known as sprints. You show the project to the client to implement their feedback (if any) at the end of every sprint cycle, and once you get the go-ahead, you move onto the next cycle. 
+![image text](https://github.com/fc16895/SoftwareEngineeringProject/blob/master/img/scrum.png)
 
 Our group finished daily talk through WhatsApp, and had meeting on Teams if necessary.  
 
-![image text](https://github.com/fc16895/SoftwareEngineeringProject/blob/master/img/agile.png)
-![image text](https://github.com/fc16895/SoftwareEngineeringProject/blob/master/img/scrum.png)
+
 
 ### Team Roles
 
