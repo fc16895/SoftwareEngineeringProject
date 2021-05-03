@@ -9,7 +9,8 @@ Scrum project management involves breaking down a complex project into smaller, 
 
 Our group finished daily talk through WhatsApp, and had meeting on Teams if necessary.  
 
-![image text]()
+![image text](https://github.com/fc16895/SoftwareEngineeringProject/blob/master/img/agile.png)
+![image text](https://github.com/fc16895/SoftwareEngineeringProject/blob/master/img/scrum.png)
 
 ### Team Roles
 
@@ -17,9 +18,9 @@ Feilipe is a leader&coder, he set up the project framework and made suitble arra
 
 ### Sprints
 
-This is the link for [sprints].(https://github.com/fc16895/SoftwareEngineeringProject/projects)
+This is the link for [sprints](https://github.com/fc16895/SoftwareEngineeringProject/projects)
 
-This is the summary of [meeting logs].()
+This is the summary of [meeting logs](https://github.com/fc16895/SoftwareEngineeringProject/blob/master/img/Untitled%20Diagram2.png)
 
 
 ### Use of Git
