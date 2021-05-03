@@ -163,8 +163,8 @@ class LinksComponent {
         this.getLinks();
         console.log(_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_0__["DashboardComponent"].toSearch);
     }
-    onSelect(link) {
-        this.selectedLink = link;
+    onSelect(alink) {
+        this.selectedLink = alink;
     }
     /* putLinks(): void {
         var j: number;
@@ -756,9 +756,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const LinkData = [
-    { name: 'BLM protest does this', imagePath: '/assets/sample.png', rating: 0 },
-    { name: 'BLM protest does that', imagePath: '/assets/sample.png', rating: 0 },
-    { name: 'BLM protest also does this other thing', imagePath: '/assets/sample.png', rating: 0 }
+    { name: 'USA: Law enforcement violated Black Lives Matter protesters’ human rights, documents acts of police violence and excessive Force', imagePath: '/assets/sample1.png', rating: 0 },
+    { name: 'As protests continue over police killings, lawmakers try to add to the list of crimes protesters could face', imagePath: '/assets/sample2.png', rating: 0 },
+    { name: 'Black Lives Matters activists outline policy goals', imagePath: '/assets/sample3.png', rating: 0 },
+    { name: 'Protests In White And Black, And The Different Response Of Law Enforcement', imagePath: '/assets/sample4.png', rating: 0 },
+    { name: 'Republicans Respond to Black Lives Matter with Anti-Protest Bills', imagePath: '/assets/sample5.png', rating: 0 },
+    { name: 'The Double Standard for Policing Capitol Rioters and BLM Protesters', imagePath: '/assets/sample6.png', rating: 0 },
+    { name: 'The United States has its best opportunity in 150 years to belatedly fulfill its promise as a multiracial democracy.', imagePath: '/assets/sample7.png', rating: 0 },
+    { name: 'Republicans push ‘tsunami’ of harsh anti-protest laws after BLM rallies', imagePath: '/assets/sample8.png', rating: 0 },
+    { name: 'The birth of a militia: how an armed group polices Black Lives Matter protests', imagePath: '/assets/sample9.png', rating: 0 },
+    { name: 'Killings by Police Declined after Black Lives Matter Protests', imagePath: '/assets/sample10.png', rating: 0 },
+    { name: 'From Civil Rights to Black Lives Matter', imagePath: '/assets/sample11.png', rating: 0 },
+    { name: 'From the Black Panthers to Black Lives Matter, the ongoing fight to end police violence against black Americans', imagePath: '/assets/sample12.png', rating: 0 },
+    { name: 'Black Lives Matter protests and the Capitol assault: Comparing the police response', imagePath: '/assets/sample13.png', rating: 0 },
+    { name: 'What If The Capital Rioters Were Black? The Contrasting Police Response To Black Lives Matter Vs Trump Mob', imagePath: '/assets/sample14.png', rating: 0 },
+    { name: 'Rioters breached US Capitol security on Wednesday. This was the police response when it was Black protesters on DC streets last year', imagePath: '/assets/sample15.png', rating: 0 },
+    { name: 'False equivalency between Black Lives Matter and Capitol siege: Experts, advocates', imagePath: '/assets/sample16.png', rating: 0 },
+    { name: 'BLACK LIVES MATTER PROTESTS: WHAT’S BEEN ACHIEVED SO FAR', imagePath: '/assets/sample17.png', rating: 0 },
+    { name: 'People Are Contrasting Photos From The Attempted Capitol Coup With Those From Black Lives Matter Protests', imagePath: '/assets/sample18.png', rating: 0 },
+    { name: 'BLACK LIVES MATTER: HOW SHOULD WE RESPOND?', imagePath: '/assets/sample19.png', rating: 0 },
+    { name: 'In 2020, the Black Lives Matter movement shook the world', imagePath: '/assets/sample20.png', rating: 0 },
 ];
 class AppComponent {
     constructor(inputService, updateService) {
@@ -1059,7 +1076,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LinkDetailComponent", function() { return LinkDetailComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _link_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../link.service */ "VbYU");
+/* harmony import */ var _output_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../output.service */ "W7FD");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
 
@@ -1097,10 +1114,11 @@ function LinkDetailComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r0.link.imagePath, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 } }
+//import { LinkService } from '../link.service';
 class LinkDetailComponent {
-    constructor(route, linkService, location) {
+    constructor(route, outputService, location) {
         this.route = route;
-        this.linkService = linkService;
+        this.outputService = outputService;
         this.location = location;
     }
     ngOnInit() {
@@ -1111,14 +1129,14 @@ class LinkDetailComponent {
         if (name == null) {
             name = "0";
         }
-        this.linkService.getLink(name)
-            .subscribe(link => this.link = link);
+        this.outputService.getLinks(name)
+            .subscribe(links => this.link = links[0]);
     }
     goBack() {
         this.location.back();
     }
 }
-LinkDetailComponent.ɵfac = function LinkDetailComponent_Factory(t) { return new (t || LinkDetailComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_link_service__WEBPACK_IMPORTED_MODULE_2__["LinkService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"])); };
+LinkDetailComponent.ɵfac = function LinkDetailComponent_Factory(t) { return new (t || LinkDetailComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_output_service__WEBPACK_IMPORTED_MODULE_2__["OutputService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"])); };
 LinkDetailComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LinkDetailComponent, selectors: [["app-link-detail"]], inputs: { link: "link" }, decls: 3, vars: 1, consts: [[4, "ngIf"], [3, "click"], ["for", "link-name"], [2, "width", "600px", "height", "400px", 3, "src"]], template: function LinkDetailComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, LinkDetailComponent_div_0_Template, 13, 5, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 1);

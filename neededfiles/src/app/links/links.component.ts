@@ -33,8 +33,8 @@ selectedLink?: Link;
   }
 
 
-onSelect(link: Link): void {
-  this.selectedLink = link;
+onSelect(alink: Link): void {
+  this.selectedLink = alink;
 }
 
 /* putLinks(): void {
