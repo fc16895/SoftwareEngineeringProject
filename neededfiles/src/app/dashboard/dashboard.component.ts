@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-//import { Hero } from '../hero';
-//import { HeroService } from '../hero.service';
-//import { Link } from '../link';
-//import { LinkService } from '../link.service';
-
+// import { Hero } from '../hero';
+// import { HeroService } from '../hero.service';
+// import { Link } from '../link';
+// import { LinkService } from '../link.service';
 
 
 @Component({
@@ -12,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  static toSearch : String = '????';
+  public static toSearch: string = '?';
+  constructor(){}
 /* links: Link[] = [];
 
   constructor(private linkService: LinkService) { }
@@ -25,9 +25,8 @@ export class DashboardComponent implements OnInit {
     this.linkService.getLinks()
       .subscribe(links => this.links = links.slice(1, 5));
   } */
-  save( s: String ){
-	  DashboardComponent.toSearch=s;
+  public save( s: string ){
+      DashboardComponent.toSearch = s;
   }
-  constructor(){}
-  ngOnInit(){}
+  public ngOnInit(){}
 }

@@ -10,10 +10,10 @@ import { LinkDetailComponent } from './link-detail/link-detail.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-{ path: 'detail/:name', component: LinkDetailComponent },  
-{ path: 'links', component: LinksComponent },  
-{path: 'ratings', component: RatingsComponent},
-{ path: 'boards', component: BoardsComponent }
+  { path: 'detail/:name', component: LinkDetailComponent },
+  { path: 'links', component: LinksComponent },
+  {path: 'ratings', component: RatingsComponent},
+  { path: 'boards', component: BoardsComponent }
 ];
 
 @NgModule({

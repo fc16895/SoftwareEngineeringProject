@@ -1,16 +1,10 @@
-<h2>All links</h2>
+<h1>All links</h1>
 <ul class="links">
-  <li *ngFor="let link of links">
+  <li class="title" *ngFor="let link of links">
  <a routerLink="/detail/{{link.name}}">
 <span class="badge">{{link.name}}</span> 
-<mat-card-content>
-    <img [src] ="link.imagePath" 
-          style="width: 600px;height: 400px;">
-  </mat-card-content>
 </a>  
 </li>
 </ul>
 
 
-
-<app-link-detail [link]="selectedLink"></app-link-detail>

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Link } from '../link';
-//import { LINKS } from '../mock-links';
-//import { LinkService } from '../link.service';
+// import { LINKS } from '../mock-links';
+// import { LinkService } from '../link.service';
 import { InputService } from '../input.service';
 import { OutputService } from '../output.service';
-import {DashboardComponent } from '../dashboard/dashboard.component'
+import {DashboardComponent } from '../dashboard/dashboard.component';
 
 /* const LinkData: Link[] =[
 {name: 'BLM protest does this', imagePath:'/assets/sample.png'},
@@ -20,21 +20,21 @@ import {DashboardComponent } from '../dashboard/dashboard.component'
 
 export class LinksComponent implements OnInit {
 
-links: Link[] = [];
-selectedLink?: Link;
+public links: Link[] = [];
+public selectedLink?: Link;
 //  constructor(private linkService: LinkService) { }
-  constructor(private inputService: InputService,private outputService: OutputService) { 
-	}
+constructor(private inputService: InputService, private outputService: OutputService) {
+    }
 
-  ngOnInit(): void {
+public ngOnInit(): void {
 /* 	  console.log('put');
   	this.putLinks(); */
-	this.getLinks();console.log(DashboardComponent.toSearch);
+    this.getLinks(); console.log(DashboardComponent.toSearch);
   }
 
 
-onSelect(link: Link): void {
-  this.selectedLink = link;
+public onSelect(alink: Link): void {
+  this.selectedLink = alink;
 }
 
 /* putLinks(): void {
@@ -44,22 +44,18 @@ onSelect(link: Link): void {
     }
 } */
 
-//getLinks(): void {
+// getLinks(): void {
 //  this.linkService.getLinks()
 //      .subscribe(links => this.links = links);
-//}
+// }
 
-getLinks(): void {
-	this.outputService.getLinks(DashboardComponent.toSearch)
-		.subscribe(links => {
-			this.links=links;
-			console.log(this.links);
-		});
+public getLinks(): void {
+    this.outputService.getLinks(DashboardComponent.toSearch)
+        .subscribe(links => {
+            this.links = links;
+            console.log(this.links);
+        });
 }
-
-
-
-
 
 
 }
