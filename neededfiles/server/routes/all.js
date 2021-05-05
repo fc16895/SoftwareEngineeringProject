@@ -16,7 +16,7 @@ router.get('/:name', function (req, res) {
             return;
         }console.log(links);
         res.json(links);
-    });
+    }).limit(10);
 });
 
 module.exports = router;
