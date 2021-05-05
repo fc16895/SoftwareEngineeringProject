@@ -6,8 +6,8 @@ import { MatCardModule } from '@angular/material/card';
 import {InputService} from './input.service';
 import {OutputService} from './output.service';
 
-//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService } from './in-memory-data.service';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -19,15 +19,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RatingsComponent } from './ratings/ratings.component';
 import { LinksComponent } from './links/links.component';
 import { LinkDetailComponent } from './link-detail/link-detail.component';
-//import { LinkSearchComponent } from './link-search/link-search.component';
+// import { LinkSearchComponent } from './link-search/link-search.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-MatCardModule,   
- HttpClientModule,
+    MatCardModule,
+    HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.

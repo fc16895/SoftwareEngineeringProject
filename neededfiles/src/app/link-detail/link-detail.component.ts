@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { OutputService } from '../output.service';
 
-//import { LinkService } from '../link.service';
+// import { LinkService } from '../link.service';
 
 
 @Component({
@@ -14,28 +14,25 @@ import { OutputService } from '../output.service';
 })
 export class LinkDetailComponent implements OnInit {
 
-@Input() link?: Link;
+@Input() public link?: Link;
 
-  constructor( private route: ActivatedRoute,
-  private outputService: OutputService,
-  private location: Location) { }
+constructor( private route: ActivatedRoute, private outputService: OutputService, private location: Location) { }
 
-  ngOnInit(): void {
+public ngOnInit(): void {
   this.getLink();
   }
 
-getLink(): void {
-	var name = this.route.snapshot.paramMap.get('name');
-	if (name == null){name = "0"} 
-	this.outputService.getLinks(name)
-	.subscribe(links => this.link = links[0]);
+public getLink(): void {
+    let name = this.route.snapshot.paramMap.get('name');
+    if (name === undefined){name = '0';}
+    this.outputService.getLinks(name!)
+    .subscribe(links => this.link = links[0]);
 }
 
 
-goBack(): void {
-	this.location.back();
+public goBack(): void {
+    this.location.back();
 }
-
 
 
 }

@@ -10,24 +10,24 @@ import { Link } from './link';
 })
 export class OutputService {
 
-  httpOptions = {
+  public httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-  private REST_API_SERVER = "http://localhost:9999/getall";
-  
+  private REST_API_SERVER = 'http://localhost:9999/getall';
+
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   public getLinks(name: String): Observable<Link[]>{
-    return this.http.get<Link[]>(this.REST_API_SERVER+"/search?name="+name,this.httpOptions)
-	.pipe(
+    return this.http.get<Link[]>(this.REST_API_SERVER + '/search?name=' + name, this.httpOptions)
+    .pipe(
     tap(_ => this.log('fetched links')),
-      catchError(this.handleError<Link[]>('getLinks', []))
+    catchError(this.handleError<Link[]>('getLinks', []))
     );
- 
+
 }
 
-private log(message: string) {
+  private log(message: string) {
   this.messageService.add(`linkService: ${message}`);
 }
 
@@ -37,7 +37,7 @@ private log(message: string) {
  * @param operation - name of the operation that failed
  * @param result - optional value to return as the observable result
  */
-private handleError<T>(operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {
 
     // TODO: send the error to remote logging infrastructure

@@ -49,9 +49,9 @@ class BoardsComponent {
             /*Here below we calculate the average rating (this wasnt done on a separate functtion because for some
              reason the links were not initiliased when using a separate function !) */
             this.average = 0;
-            for (var i = 0; i < this.links.length; i++) {
-                this.average = this.average + this.links[i].rating;
-                console.log(this.links[i].rating);
+            for (let alink of links) {
+                this.average = this.average + alink.rating;
+                console.log(alink.rating);
             }
             this.average = this.average / this.links.length;
             console.log(this.average);
@@ -159,10 +159,10 @@ class LinksComponent {
             this.inputService.input(LinkData[j]).subscribe();
         }
     } */
-    //getLinks(): void {
+    // getLinks(): void {
     //  this.linkService.getLinks()
     //      .subscribe(links => this.links = links);
-    //}
+    // }
     getLinks() {
         this.outputService.getLinks(_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_0__["DashboardComponent"].toSearch)
             .subscribe(links => {
@@ -250,7 +250,7 @@ class RatingsComponent {
         }
         console.log(this.j);
         console.log(this.links.length);
-        var toChange = {
+        let toChange = {
             name: this.links[this.j].name,
             imagePath: this.links[this.j].imagePath,
             rating: value
@@ -261,20 +261,21 @@ class RatingsComponent {
         this.getLinks();
         this.j++;
     }
-    convertToNumber(string) {
-        var flag = false;
-        if (string.length > 2) {
+    convertToNumber(astring) {
+        let flag = false;
+        if (astring.length > 2) {
             return 0;
         }
-        if (string.length == 2) {
-            if (string.charCodeAt(0) != 49 || string.charCodeAt(1) != 48) {
+        if (astring.length === 2) {
+            if (astring.charCodeAt(0) !== 49 || astring.charCodeAt(1) !== 48) {
                 return 0;
             }
             return 10;
         }
-        if (string.charCodeAt(0) < 49 || string.charCodeAt(0) > 57)
+        if (astring.charCodeAt(0) < 49 || astring.charCodeAt(0) > 57) {
             return 0;
-        return string.charCodeAt(0) - 48;
+        }
+        return astring.charCodeAt(0) - 48;
     }
 }
 RatingsComponent.ɵfac = function RatingsComponent_Factory(t) { return new (t || RatingsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_output_service__WEBPACK_IMPORTED_MODULE_2__["OutputService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_update_service__WEBPACK_IMPORTED_MODULE_3__["UpdateService"])); };
@@ -412,10 +413,10 @@ class UpdateService {
     constructor(http, messageService) {
         this.http = http;
         this.messageService = messageService;
-        this.REST_API_SERVER = "http://localhost:9999/update";
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]({ 'Content-Type': 'application/json' })
         };
+        this.REST_API_SERVER = 'http://localhost:9999/update';
     }
     update(links) {
         console.log('update');
@@ -474,10 +475,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const _c0 = function () { return ["/links"]; };
-//import { Hero } from '../hero';
-//import { HeroService } from '../hero.service';
-//import { Link } from '../link';
-//import { LinkService } from '../link.service';
+// import { Hero } from '../hero';
+// import { HeroService } from '../hero.service';
+// import { Link } from '../link';
+// import { LinkService } from '../link.service';
 class DashboardComponent {
     constructor() { }
     /* links: Link[] = [];
@@ -549,7 +550,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const LinkData = [
+const linkData = [
     { name: 'USA: Law enforcement violated Black Lives Matter protesters’ human rights, documents acts of police violence and excessive Force', imagePath: '/assets/sample1.png', rating: 0 },
     { name: 'As protests continue over police killings, lawmakers try to add to the list of crimes protesters could face', imagePath: '/assets/sample2.png', rating: 0 },
     { name: 'Black Lives Matters activists outline policy goals', imagePath: '/assets/sample3.png', rating: 0 },
@@ -581,10 +582,10 @@ class AppComponent {
         this.putLinks();
     }
     putLinks() {
-        var j;
-        for (j = 0; j < LinkData.length; j++) {
-            this.inputService.input(LinkData[j]).subscribe();
-            this.updateService.update(LinkData[j]).subscribe();
+        let j;
+        for (j = 0; j < linkData.length; j++) {
+            this.inputService.input(linkData[j]).subscribe();
+            this.updateService.update(linkData[j]).subscribe();
         }
     }
 }
@@ -648,10 +649,10 @@ class OutputService {
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({ 'Content-Type': 'application/json' })
         };
-        this.REST_API_SERVER = "http://localhost:9999/getall";
+        this.REST_API_SERVER = 'http://localhost:9999/getall';
     }
     getLinks(name) {
-        return this.http.get(this.REST_API_SERVER + "/search?name=" + name, this.httpOptions)
+        return this.http.get(this.REST_API_SERVER + '/search?name=' + name, this.httpOptions)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(_ => this.log('fetched links')), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('getLinks', [])));
     }
     log(message) {
@@ -712,8 +713,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService } from './in-memory-data.service';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService } from './in-memory-data.service';
 
 
 
@@ -724,7 +725,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import { LinkSearchComponent } from './link-search/link-search.component';
+// import { LinkSearchComponent } from './link-search/link-search.component';
 class AppModule {
 }
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
@@ -795,30 +796,19 @@ function LinkDetailComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](3, "uppercase");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "name: ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "label", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Link name: ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-card-content");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "img", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-card-content");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "img", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](3, 3, ctx_r0.link.name), " Details");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r0.link.name);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](3, 2, ctx_r0.link.name), " Details");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r0.link.imagePath, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 } }
-//import { LinkService } from '../link.service';
+// import { LinkService } from '../link.service';
 class LinkDetailComponent {
     constructor(route, outputService, location) {
         this.route = route;
@@ -829,9 +819,9 @@ class LinkDetailComponent {
         this.getLink();
     }
     getLink() {
-        var name = this.route.snapshot.paramMap.get('name');
-        if (name == null) {
-            name = "0";
+        let name = this.route.snapshot.paramMap.get('name');
+        if (name === undefined) {
+            name = '0';
         }
         this.outputService.getLinks(name)
             .subscribe(links => this.link = links[0]);
@@ -841,8 +831,8 @@ class LinkDetailComponent {
     }
 }
 LinkDetailComponent.ɵfac = function LinkDetailComponent_Factory(t) { return new (t || LinkDetailComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_output_service__WEBPACK_IMPORTED_MODULE_2__["OutputService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"])); };
-LinkDetailComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LinkDetailComponent, selectors: [["app-link-detail"]], inputs: { link: "link" }, decls: 3, vars: 1, consts: [[4, "ngIf"], [3, "click"], ["for", "link-name"], [2, "max-width", "600px", "height", "auto", 3, "src"]], template: function LinkDetailComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, LinkDetailComponent_div_0_Template, 13, 5, "div", 0);
+LinkDetailComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LinkDetailComponent, selectors: [["app-link-detail"]], inputs: { link: "link" }, decls: 3, vars: 1, consts: [[4, "ngIf"], [3, "click"], [2, "max-width", "600px", "height", "auto", 3, "src"]], template: function LinkDetailComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, LinkDetailComponent_div_0_Template, 7, 4, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LinkDetailComponent_Template_button_click_1_listener() { return ctx.goBack(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "go back");
@@ -872,10 +862,10 @@ __webpack_require__.r(__webpack_exports__);
 class InputService {
     constructor(http) {
         this.http = http;
-        this.REST_API_SERVER = "http://localhost:9999/newlink";
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]({ 'Content-Type': 'application/json' })
         };
+        this.REST_API_SERVER = 'http://localhost:9999/newlink';
     }
     input(links) {
         console.log('input');

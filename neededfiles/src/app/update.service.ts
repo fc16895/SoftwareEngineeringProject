@@ -9,16 +9,16 @@ import { Link } from './link';
   providedIn: 'root'
 })
 export class UpdateService {
-	
-  private REST_API_SERVER = "http://localhost:9999/update";
-  httpOptions = {
+  public httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
+
+  private REST_API_SERVER = 'http://localhost:9999/update';
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   public update(links: Link){console.log('update');
-    return this.http.post<Link>(this.REST_API_SERVER, links, this.httpOptions)
+                             return this.http.post<Link>(this.REST_API_SERVER, links, this.httpOptions);
 
 }
 }
