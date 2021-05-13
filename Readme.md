@@ -105,7 +105,7 @@ INSERT PIC HERE
 
 The challenge that this project represents is that of, first, putting different news articles at the user's disposition following their topic of choice. Additionally, effort had to be made to represent different chess pieces dispositions in accordance to the average rating inputted by the user for each one of the articles relating to their topic of choice. These endeavours were identified as technical ones mainly.
 
-Sprints & Project Management:
+### Sprints & Project Management:
 
 #### Group Working Methods
 
@@ -146,4 +146,3 @@ This is the summary of [meeting logs](https://github.com/fc16895/SoftwareEnginee
 In the beginning, we created our own branch on github and pushed finished file to it. However, we were confronted with the conflict once. So, in the following process, we switched to the master. Before starting to do new assignment, we should clone the updatest file into our computer. And after finishing the code file, we pushed them to the origin master instead of branch.
 
 During the sprints, we put our plan to the projects on github, it will show us what we should do this week, and it has three colums: to do, in prograss and done. Every member can know about the process of weekly sprint throughout this page.
-
