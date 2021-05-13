@@ -284,8 +284,8 @@ Our group use the agile model and the scrum method. Compared with waterfull mode
 
 Scrum project management involves breaking down a complex project into smaller, more manageable parts known as sprints. You show the project to the client to implement their feedback (if any) at the end of every sprint cycle, and once you get the go-ahead, you move onto the next cycle.
 
-![picture](img/Scrum.png)
-![picture](img/Agile.png)
+![picture](img/scrum.png)
+![picture](img/agile.png)
 
 Our group finished daily talk through WhatsApp, and had meeting on Teams if necessary.
 
