@@ -76,7 +76,7 @@ Additionally, the education sector has been heavily coupled with gamification te
 
 These areas where gamification has been hugely implemented for the self-improvement of the users seem to have yielded either postive results, or neutral ones.
 
-### Current industry review
+### Current industry review
 
 Very little to no literature exists on the previous reasearch about new methods seeking to promote the consumption of news in people. This reinforces the idea of an unstoppable (in the sense that nothing has been done to stop such a trend) change in the source of news, expressed by Mike Vorhaus in the Forbes article *People Increasingly Turn To Social Media For News* (2020): "As newspapers have fallen dramatically in usage, and the national newscasts have dropped in ratings, the swing to new sources of information has accelerated considerably."
 
