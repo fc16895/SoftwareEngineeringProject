@@ -105,6 +105,8 @@ INSERT PIC HERE
 
 The challenge that this project represents is that of, first, putting different news articles at the user's disposition following their topic of choice. Additionally, effort had to be made to represent different chess pieces dispositions in accordance to the average rating inputted by the user for each one of the articles relating to their topic of choice. These endeavours were identified as technical ones mainly.
 
+![picture](SystemImplementationImages/Untitled Diagram.png)
+
 ### Sprints & Project Management:
 
 #### Group Working Methods
