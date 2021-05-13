@@ -95,7 +95,7 @@ However, despite the lack of literature, when it comes to measures aiming at pro
 
 This, although incomplete, list of current projects aiming at promoting the consumption of news articles points towards the fact that the majority of applications with that aim employ the same three methods described in the *Usage of user representation through gamification for the development of new habits* section. Indeed, *Abridge News* and *Hypothes.is* make use of social interactions with the user's peers through sharing their opinions and takeaways on the articles read. On the other hand, *Knowhere* employs user feedback and reward to encourage the user critical thinking on the different aspects of a news article (author, date, facts included, etc.) as well as the way of organising those deductions made by the user of the website. Finally, *BBC iReporter* and *NewsFeedDefender* have the user follow a "progress path" with different difficulty levels.
 
-### How the *CauseVisualiser* lands in the current industry
+### How the *CauseVisualiser* lands in the current industry
 
 The literature review points towards the following problem: nowadays, people, especially younger generations, are consuming news that relate to events and information that are more societal and relating to lifestyle than news about events that can have a major consequence on politics and the world's order. The major consequence of this phenomenon is the downgrading of the population's average illiteracy on facts that have a direct correlation with the individual's democratic right (and duty) of voting in matters that are affected and themselves affect those events.
 
@@ -105,7 +105,138 @@ INSERT PIC HERE
 
 The challenge that this project represents is that of, first, putting different news articles at the user's disposition following their topic of choice. Additionally, effort had to be made to represent different chess pieces dispositions in accordance to the average rating inputted by the user for each one of the articles relating to their topic of choice. These endeavours were identified as technical ones mainly.
 
+
+#### Technical Timeline
+
+##### Initial project skeleton
+
+The construction of the SPA was first tackled from the Front-End, thtorugh the use of the Angular framework. As the project mainly revolved around the concept of links that could display the content of some articles, the *LinksComponent* was created first, alongside an example of a link, with a name and a path pointing towards the picture of the article's content to be displayed with the link. Accordingly, a *Link* interface that was implemented by the *LinksComponent* was also created.
+
 ![picture](SystemImplementationImages/Stage1.png)
+
+After modifying the corresponding *.html* files associated with *LinksComponent* and the appearance of the website, this was the result:
+
+![picture](SystemImplementationImages/AngularFirstStage.png)
+
+Many links were to be displayed, not just one, so a file containing many different ones, named *mock-links.ts* was created and imported in *App.component.ts*, and *App.component.html* was modified accordingly to display all of these. owever, each link had its own "details", i.e the picture of the corresponding article's content. Therefore, in order to have each one of the links in *mock-links.ts* to display its details upon clicking on them, a click-event binding was added in *App.component.html* under the form *(click)="onSelect(hero)*" and a *onSelect()* was added.
+
+![picture](SystemImplementationImages/Stage2.png)
+
+The resulting website was as show below:
+
+![picture](SystemImplementationImages/AngularSecondStage.png)
+
+Here, we can see that upon clicking on the second link from the list, its details were shown underneath.
+
+Additionally, to make the handling of the details more maintainable, a separate *LinksDetailsComponent* was generated. A parent/child relationship was created through the use of an *@Input* decorator so the external *LinksComponent* could bind to it. The latter's correponding *.html* file was appendixed with a link detail binding under the form <app-link-detail [link]="selectedLink"></app-link-detail>.
+
+![picture](SystemImplementationImages/Stage3.png)
+
+Unsurprinsingly, the website's appearance did not change from the previous one, as only the organisation of the underlying files was modified for greater manageability.
+
+However, it is very bad practice for components to save and provide data directly, as they are certainly not part of the database that was going to be implemented later. Data access had to be therefore delagated to a service, that was thus generated and named *LinkService*.
+
+A method named *getLinks()* was added to *LinkService.ts* with the function to return all of the mock links that were created before this stage. A method of the same name was addded to *App.component.ts* in order to obtain the links from the service. The declaration of the links to be displayed had therefore to change from *links = LINKS* (mock links directly accessed from *mock-links.ts*) to *links: Link[] = []* (empty array of links to be filled in through the *getLinks()* method). However, as for a real remote server, the data is fetched in an inherently asynchronous manner from the API, the type of links returned by the *LinkService*'s *getLinks()* method was changed to Observable links. The method *getLinks()* in *LinksComponent.ts* was thus modified to subscribe the content obtained from the service and succesively populate the *links* array of links.
+
+It was however very important that the website contained different sections to display the didferent type of information: the link search box, the list of resulting links, the ratings, the resulting chess board disposition. Many different routes therefore had to be created. For this, *app-routing* module was generated, and the needed files were modified accordingly (namely *app-routing.module.ts* and *app.component.html*). A*DashboardComponent* was created, which was going to present the "Search for a link" textbox, and a link to the dashboard was added to *app.component.html* under the form <a routerLink="/dashboard">Dashboard </a> (MAKE SURE THIS LINK APPEARS IN MD). The dashboard route was also added in *app-routing.module.ts* as the default route (everytime a user would load the page from scratch, the dashboard would be the first section to be displayed). Additionally, in order to stop the link details (the corresponding article's content) to be displayed under the list of links itself, and have the details be shown ina separate tab, the *link-detail* route was added to *app-routing.module.ts*, and a *routerLink* to the link details was added to *dashboard.component.html* and to *links.component.html*. Finally, to have the *link-detail* section to obtain the link-to-display through a URL, a *getLink()* method was added to *link-detail.component.ts* to extract the link name from the route and a *getLink()* method was added to *link.service.ts* to acquire the link with that name from the server that was going to be implemented later down the line.
+
+The resutling website is shown below, where it can be seen below the SPA's title that there are two tabs, *Dashboard* and *Links* to access the soon-to-be implemented "search for a link" box and the list of resulting links respectively.
+
+With the use of an Express.js server in sight, the right features had to be implemented on Angular first to fetch the data from an actual remote server. For this, the http services were enabled through *app.module.ts* and a simulated data server was generated under the name of *InMemoryData*. To accomodate for the usage of an http request to the API, the method *getLinks()* in *link.service.ts* was modified, by changing:
+
+const links = of(LINKS);
+
+return links;
+
+with
+
+return this.http.get<Link[]>(this.linksUrl)
+
+Furthermore, to enable the user to search for an article by name, a *searchLinks()* method was added to *link.service.ts*, and a corresponding textbox implementing this method was inserted in *dashboard.component.html* under the form <app-link-search></app-link-search>. A *LinkSearchComponent* was generated, with a *search()* method in its *.ts* file and a search box in its *.html* file.
+
+The resutling website's appearance was like shown below:
+
+Finally, the ratings given by the user to each one of the links searched for had to be implemented in the SPA. An equivalent approach to the one detailed before for the website's links was carried out. Obviously, some parts were left out, like component's details (do not apply to the concept of user-inputted ratings) and the search component. Nevertheless, an *addRating()* method was coded inside of the corresponding *RatingService* in order to input the rating into the API, and another *addRating()* was added to *rating.component.ts* in order to subscribe to the RatingService's method and push to the ratings list for display.
+
+The resulting website's appearance was as shown below:
+
+##### Server and database addition
+
+At the stage shown at the end of the previous section, two different tasks were identified. First, the SPA had to be able to display different chess boards depending on the ratings inputted by the user on each one of the links searched for. However, the API and the database had to be coupled to this initial Angular "skeleton" described in the previous section. Thus, as the boards were going to depend on the value of the ratings and that implied a front-end/back-end communication, the implementation of the chess boards view was left for after the setup of the server and the database.
+
+When an http request was made by one of the services, an action had to be triggered. Thus, the Express.js framework was used simulate the SPA's server in order to handle those http requests. Consequently, a server.js file was added to the project where the way the data is served upon users' requests is stated. The different types of http requests implemented by server.js, namely "get all the links", "update the ratings" and "add the links to the database" were specified in three different files, *all.js*, *update.js* and *new.js* respectively.
+
+After setting up the server's specifications, the ratings component was merged into the link interface as a field named *rating* of type *number*, in order to make the front-end more manageable when interacting with the Back-end through express.
+
+In order to store the data, a MongoDB container was set after specifying it in a *docker-compose.yml* file and running the command *docker-compose up -d*.
+
+In oder to set up a connection between the server implemented through Express.js and the database container just mentioned, a *db.js* file, declaring the variables holding the user's specifications and the server's port, was created, and then "requested" within the *server.js* file.
+
+(WHEN WAS APP.COMPONENT.TS MODIFIED WITH ALL THE LINKS ?)
+
+Following the merging of the rating component into the link interface, the services present at the end of the building phase of the Angular skeleton had to be changed. An *outputService* was implemented, with a *getLinks()* method to obtain all the links whose name macthed the string inputted by the user in the dashboard's "search for an article" textbox (thanks to a *search()* method within *dashboard.component.ts*). Additionally, an *updateService* sets all the links to 0 whenever a new article is searched. Finally, *inputService* uses the links stored in *app.component.ts* as a seed to populate the database container when the website is first run.
+
+##### Post-back-end angular modification
+
+Once the API and the database were set up, the *BoardsComponent*, whose function was to display a different chess board disposition depending on the averae rating inputted by a user for a specific topic was added to the project. A *getLinks()* method within the *.ts* file would first populate the *links* array, declared as one of the class fields, with the database's links, that were searched for on the dashboard, through the *outputService*. Then, the average rating of for all the links outputted would be calculated and a different image of a chess game layout would be displayed depending on the value of this average.
+
+#### System Implementation
+
+- Stack architecture and system design (e.g. class diagrams, sequence diagrams).
+- Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams).
+- Middle Tier - Express, Node, the RESTful API
+- Front End - Angular. Details of implementation.
+- Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
+- Deployment details (including Docker), include how you have been achieving continuous integration and deployment.
+
+##### Stack architecture and flow of data
+
+The project is organised in 4 different parts, each one corresponding to one of the MEAN stacks functionalities.
+
+##### Front End
+
+First, the files that were generated though Angular and whose purpose is to represent the front-end are comprise within the *src/app/* folder. There, the differenrent components (boards, links, link details, dashboard and app) sit. The links and link details components implement the *Link* interface (defined in the file *Links.ts*, within that smae path). The *Link* interface comprises the following properties:
+
+- *name*, of type *string*, to hold the name of the link containing the article
+  
+- *imagePath*, of type *string*, to hold the path of the image containing the content of te article
+  
+- *rating*, of type *number*, to hold the value from 0 to 10 representing how positive the user thinks the article in question is for the cause they believe in
+  
+
+The *BoardsComponent* class has an array of links as field, which is initiliased through the *outputService*. An average of all the ratings of the links displayed on the website after searching for a topic of interest is calculated, and the value of this average determines the stage of the chess game to be displayed. The stages are represented here below, and belong the to the famous game that took place in 17th October in 1956 in New York, USA, between Bobby Fischer and Donald Byrne. It is commonly known as "The Game of the Century".
+
+The *DashboardComponent* class has a field named *toSearch*, of type *string*, which is then attributed to the argument of the only method in that class, *save(string: s)*.
+
+Then, the *AppComponentClass* contains all the links that are first locally stored.
+
+Method *putLinks()* in *AppComponentClass* makes use of the services *inputService* and *updateService* to first input the links above in the database container, namely MongoDB. Then, *putLinks()* sets all the ratings of all the links to 0 in the database just mentioned.
+
+Finally, the *LinksComponent* class declares an empty array of links, which is initialised when first running the application thanks to one of its methods, called *getLinks()*.
+
+The *LinksDetailsComponent* class contains an Input property *Link* (annotated with the decorator *@Input*) so the external *LinksComponent* class can bind to it. This binding enables the details of each link (its rating and image representing the article content) to be enclosed in sub-component separated from the main *link* component, and thus to make the appliciation more manageable.
+
+##### Middle Tier
+
+- Express, Node, the RESTful API
+
+As explained in the previous section, *inputService* and *updateService* initialise the database container by using *AppComponent* as seed, and set all the ratings to 0. On the other hand, *outputService* fetches the data from that database and forms the array of links *links* in *LinksComponent* for deployment in the front end. *linkService* provides a parent/child relationship between *LinksComponent* and *LinkDetailComponent* respectively. In order to achieve this, the RESTful API is defined in each one of these services through port 9999.
+
+Express.js handles the http requests generated by *inputService* and *updateService*, and those incoming towards *outputService* from port 9999, which acts as an intermidiate between these services juts metnioned and the file *server.js*. The latter declares the type of http requests that will be handled, sets up the port on which the server is to "listen" (in this case, port 9999) and declares the file *db.js* as required. *db.js* sets up the connection with the Mongo database container. The interactions between the server and the database, stemming from the http requests, are defined under *server/routes/* in the files *all.js* (to get all the links), *update.js* (to update the ratings) and *new.js* (to input the links in the database), and they are powered by Node.js which simulates the runtime environment of the server. These three files also defined the Mongo database that will be used. These interactions are then handled by Mongoose (a library for MongoDB and Node.js) and fetch/change the data in the database accordingly. Therefore, Express.js and Node.js work as the RESTful API of the website.
+
+##### Back End
+
+MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams).
+
+The database is set as a container specified in the *docker-compose.yml* file. When the application is started, the *inputService*, followed by the function defined in the *new.js* class populate the database using *AppComponent* as seed.
+
+##### Standardised deployment
+
+In order to have the application be runnable from different terminals, Docker was used in order to standardises the deployment. First, a *Dockerfile* was created to install an image of 10-alpine, which standardises the operating system. Then, it sets up the working directory, copies all the project files into the terminal being used and runs the command *node server.js*, which runs the whole application, including the express server and all the dependencies mentioned in the previous sections.
+
+Nevertheless, in order to set up all the MEAN stacks (really) features in the terminal being used, a file called *docker-compose.yml* is created, where the Mongo Database is defined and the node.js is set up.
+
+Running the command *docker-compose up -d* encompasses the containers defined above, as well as runs the command *Docker build .* in order to read the *Dockerfile* mentioned in *docker-compose.yml* and thus create and save an image of 10-alpine, while setting up all the needed files in the working terminal.
 
 ### Sprints & Project Management:
 
