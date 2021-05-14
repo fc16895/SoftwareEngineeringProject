@@ -2,13 +2,13 @@ _CauseVisualiser_
 
 ### Team:
 
-- Dai Linhong
+- Dai Linhong: gate stage reviewer, and Front-End aesthetics creator
   
-- Ying Liyanbing
+- Ying Liyanbing: API developper
   
-- Tao He
+- Tao He: Front-End refinement and content display
   
-- Felipe Castano
+- Felipe Castano: task management, and project scaffolding developper
 
 [Here is a link to a file indicating how to render the Website](https://github.com/fc16895/SoftwareEngineeringProject/blob/master/HowToRun.md)
   
