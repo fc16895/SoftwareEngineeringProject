@@ -119,6 +119,7 @@ The construction of the SPA was first tackled from the Front-End, thtorugh the u
 <img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/Stage1.png">
  </p>
 <br/>
+
 After modifying the corresponding *.html* files associated with *LinksComponent* and the appearance of the website, this was the result:
 
 <p align="center">
@@ -135,7 +136,7 @@ Many links were to be displayed, not just one, so a file containing many differe
 The resulting website was as show below:
 <br/>
 <p align="center">
-<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularSecondImage.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularSecondStage.png">
  </p>
 <br/>
 
@@ -300,6 +301,8 @@ First, the files that were generated though Angular and whose purpose is to repr
 
 The *BoardsComponent* class has an array of links as field, which is initiliased through the *outputService*. An average of all the ratings of the links displayed on the website after searching for a topic of interest is calculated, and the value of this average determines the stage of the chess game to be displayed. The stages are represented here below, and belong the to the famous game that took place in 17th October in 1956 in New York, USA, between Bobby Fischer and Donald Byrne. It is commonly known as "The Game of the Century".
 
+<br/>
+<p align="center">
 <img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/StartPhase.png">
 <img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FirstPhase.png">
 <img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/SecondPhase.png">
@@ -307,6 +310,8 @@ The *BoardsComponent* class has an array of links as field, which is initiliased
 <img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FourthPhase.png">
 <img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FifthPhase.png">
 <img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FinalPhase.png">
+  </p>
+<br/>
 
 The *DashboardComponent* class has a field named *toSearch*, of type *string*, which is then attributed to the argument of the only method in that class, *save(string: s)*.
 
