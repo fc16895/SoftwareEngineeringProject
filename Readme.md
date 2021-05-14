@@ -416,3 +416,7 @@ This is the summary of [meeting logs](https://github.com/fc16895/SoftwareEnginee
 In the beginning, we created our own branch on github and pushed finished file to it. However, we were confronted with the conflict once. So, in the following process, we switched to the master. Before starting to do new assignment, we should clone the updatest file into our computer. And after finishing the code file, we pushed them to the origin master instead of branch.
 
 During the sprints, we put our plan to the projects on github, it will show us what we should do this week, and it has three colums: to do, in prograss and done. Every member can know about the process of weekly sprint throughout this page.
+
+### Bibliography
+
+1. 
