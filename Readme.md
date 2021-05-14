@@ -115,7 +115,7 @@ The challenge that this project represents is that of, first, putting different 
 The construction of the SPA was first tackled from the Front-End, thtorugh the use of the Angular framework. As the project mainly revolved around the concept of links that could display the content of some articles, the *LinksComponent* was created first, alongside an example of a link, with a name and a path pointing towards the picture of the article's content to be displayed with the link. Accordingly, a *Link* interface that was implemented by the *LinksComponent* was also created.
 
 ![picture](SystemImplementationImages/Stage1.png)
-<img src="">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/Stage1.png">
 
 After modifying the corresponding *.html* files associated with *LinksComponent* and the appearance of the website, this was the result:
 
