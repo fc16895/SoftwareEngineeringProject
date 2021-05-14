@@ -114,43 +114,42 @@ The challenge that this project represents is that of, first, putting different 
 
 The construction of the SPA was first tackled from the Front-End, thtorugh the use of the Angular framework. As the project mainly revolved around the concept of links that could display the content of some articles, the *LinksComponent* was created first, alongside an example of a link, with a name and a path pointing towards the picture of the article's content to be displayed with the link. Accordingly, a *Link* interface that was implemented by the *LinksComponent* was also created.
 
-![picture](SystemImplementationImages/Stage1.png)
 <img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/Stage1.png">
 
 After modifying the corresponding *.html* files associated with *LinksComponent* and the appearance of the website, this was the result:
 
-![picture](SystemImplementationImages/AngularFirstStage.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularFirstStage.png">
 
 Many links were to be displayed, not just one, so a file containing many different ones, named *mock-links.ts* was created and imported in *App.component.ts*, and *App.component.html* was modified accordingly to display all of these. owever, each link had its own "details", i.e the picture of the corresponding article's content. Therefore, in order to have each one of the links in *mock-links.ts* to display its details upon clicking on them, a click-event binding was added in *App.component.html* under the form *(click)="onSelect(hero)*" and a *onSelect()* was added.
 
-![picture](SystemImplementationImages/Stage2.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/Stage2.png">
 
 The resulting website was as show below:
 
-![picture](SystemImplementationImages/AngularSecondStage.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularSecondImage.png">
 
 Here, we can see that upon clicking on the second link from the list, its details were shown underneath.
 
 Additionally, to make the handling of the details more maintainable, a separate *LinksDetailsComponent* was generated. A parent/child relationship was created through the use of an *@Input* decorator so the external *LinksComponent* could bind to it. The latter's correponding *.html* file was appendixed with a link detail binding under the form <app-link-detail [link]="selectedLink"></app-link-detail>.
 
-![picture](SystemImplementationImages/Stage3.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/Stage3.png">
 
 Unsurprinsingly, the website's appearance did not change from the previous one, as only the organisation of the underlying files was modified for greater manageability.
 
 However, it is very bad practice for components to save and provide data directly, as they are certainly not part of the database that was going to be implemented later. Data access had to be therefore delagated to a service, that was thus generated and named *LinkService*.
 
-![picture](SystemImplementationImages/Stage4.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/Stage4.png">
 
 A method named *getLinks()* was added to *LinkService.ts* with the function to return all of the mock links that were created before this stage. A method of the same name was addded to *App.component.ts* in order to obtain the links from the service. The declaration of the links to be displayed had therefore to change from *links = LINKS* (mock links directly accessed from *mock-links.ts*) to *links: Link[] = []* (empty array of links to be filled in through the *getLinks()* method). However, as for a real remote server, the data is fetched in an inherently asynchronous manner from the API, the type of links returned by the *LinkService*'s *getLinks()* method was changed to Observable links. The method *getLinks()* in *LinksComponent.ts* was thus modified to subscribe the content obtained from the service and succesively populate the *links* array of links.
 
 It was however very important that the website contained different sections to display the didferent type of information: the link search box, the list of resulting links, the ratings, the resulting chess board disposition. Many different routes therefore had to be created. For this, *app-routing* module was generated, and the needed files were modified accordingly (namely *app-routing.module.ts* and *app.component.html*). A*DashboardComponent* was created, which was going to present the "Search for a link" textbox, and a link to the dashboard was added to *app.component.html* under the form <a routerLink="/dashboard">Dashboard </a> (MAKE SURE THIS LINK APPEARS IN MD). The dashboard route was also added in *app-routing.module.ts* as the default route (everytime a user would load the page from scratch, the dashboard would be the first section to be displayed). Additionally, in order to stop the link details (the corresponding article's content) to be displayed under the list of links itself, and have the details be shown ina separate tab, the *link-detail* route was added to *app-routing.module.ts*, and a *routerLink* to the link details was added to *dashboard.component.html* and to *links.component.html*. Finally, to have the *link-detail* section to obtain the link-to-display through a URL, a *getLink()* method was added to *link-detail.component.ts* to extract the link name from the route and a *getLink()* method was added to *link.service.ts* to acquire the link with that name from the server that was going to be implemented later down the line.
 
-![picture](SystemImplementationImages/Stage5.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/Stage5.png">
 
 The resutling website is shown below, where it can be seen below the SPA's title that there are two tabs, *Dashboard* and *Links* to access the soon-to-be implemented "search for a link" box and the list of resulting links respectively.
 
-![picture](SystemImplementationImages/AngularFifthStage1.png)
-![picture](SystemImplementationImages/AngularFifthStage2.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularFifthStage1.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularFifthStage2.png">
 
 With the use of an Express.js server in sight, the right features had to be implemented on Angular first to fetch the data from an actual remote server. For this, the http services were enabled through *app.module.ts* and a simulated data server was generated under the name of *InMemoryData*. To accomodate for the usage of an http request to the API, the method *getLinks()* in *link.service.ts* was modified, by changing:
 
@@ -168,19 +167,19 @@ Furthermore, to enable the user to search for an article by name, a *searchLinks
 
 The resutling website's appearance was like shown below:
 
-![picture](SystemImplementationImages/AngularSixthStage1.png)
-![picture](SystemImplementationImages/AngularSixthStage2.png)
-![picture](SystemImplementationImages/AngularSixthStage3.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularSixthStage1.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularSixthStage2.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularSixthStage3.png">
 
 Finally, the ratings given by the user to each one of the links searched for had to be implemented in the SPA. An equivalent approach to the one detailed before for the website's links was carried out. Obviously, some parts were left out, like component's details (do not apply to the concept of user-inputted ratings) and the search component. Nevertheless, an *addRating()* method was coded inside of the corresponding *RatingService* in order to input the rating into the API, and another *addRating()* was added to *rating.component.ts* in order to subscribe to the RatingService's method and push to the ratings list for display.
 
-![picture](SystemImplementationImages/Stage7.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/Stage7.png">
 
 The resulting website's appearance was as shown below:
 
-![picture](SystemImplementationImages/AngularRatingsStage1.png)
-![picture](SystemImplementationImages/AngularRatingsStage2.png)
-![picture](SystemImplementationImages/AngularRatingsStage3.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularRatingsStage1.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularRatingsStage2.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/AngularRatingsStage3.png">
 
 
 ##### Server and database addition
@@ -216,7 +215,7 @@ Once the API and the database were set up, the *BoardsComponent*, whose function
 
 The project is organised in 4 different parts, each one corresponding to one of the MEAN stacks functionalities.
 
-![picture](SystemImplementationImages/Folders.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/Folders.png">
 
 ##### Front End
 
@@ -231,25 +230,25 @@ First, the files that were generated though Angular and whose purpose is to repr
 
 The *BoardsComponent* class has an array of links as field, which is initiliased through the *outputService*. An average of all the ratings of the links displayed on the website after searching for a topic of interest is calculated, and the value of this average determines the stage of the chess game to be displayed. The stages are represented here below, and belong the to the famous game that took place in 17th October in 1956 in New York, USA, between Bobby Fischer and Donald Byrne. It is commonly known as "The Game of the Century".
 
-![picture](SystemImplementationImages/StartPhase.png)
-![picture](SystemImplementationImages/FirstPhase.png)
-![picture](SystemImplementationImages/SecondPhase.png)
-![picture](SystemImplementationImages/ThirdPhase.png)
-![picture](SystemImplementationImages/FourthPhase.png)
-![picture](SystemImplementationImages/FifthPhase.png)
-![picture](SystemImplementationImages/FinalPhase.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/StartPhase.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FirstPhase.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/SecondPhase.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/ThirdPhase.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FourthPhase.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FifthPhase.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FinalPhase.png">
 
 The *DashboardComponent* class has a field named *toSearch*, of type *string*, which is then attributed to the argument of the only method in that class, *save(string: s)*.
 
 Then, the *AppComponentClass* contains all the links that are first locally stored.
 
-![picture](SystemImplementationImages/ListLinks.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/ListLinks.png">
 
 Method *putLinks()* in *AppComponentClass* makes use of the services *inputService* and *updateService* to first input the links above in the database container, namely MongoDB. Then, *putLinks()* sets all the ratings of all the links to 0 in the database just mentioned.
 
 Finally, the *LinksComponent* class declares an empty array of links, which is initialised when first running the application thanks to one of its methods, called *getLinks()*.
 
-![picture](SystemImplementationImages/LinksComponentCode.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/LinksComponentCode.png">
 
 The *LinksDetailsComponent* class contains an Input property *Link* (annotated with the decorator *@Input*) so the external *LinksComponent* class can bind to it. This binding enables the details of each link (its rating and image representing the article content) to be enclosed in sub-component separated from the main *link* component, and thus to make the appliciation more manageable.
 
@@ -259,7 +258,7 @@ The *LinksDetailsComponent* class contains an Input property *Link* (annotated w
 
 As explained in the previous section, *inputService* and *updateService* initialise the database container by using *AppComponent* as seed, and set all the ratings to 0. On the other hand, *outputService* fetches the data from that database and forms the array of links *links* in *LinksComponent* for deployment in the front end. *linkService* provides a parent/child relationship between *LinksComponent* and *LinkDetailComponent* respectively. In order to achieve this, the RESTful API is defined in each one of these services through port 9999.
 
-![picture](SystemImplementationImages/API.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/API.png">
 
 Express.js handles the http requests generated by *inputService* and *updateService*, and those incoming towards *outputService* from port 9999, which acts as an intermidiate between these services juts metnioned and the file *server.js*. The latter declares the type of http requests that will be handled, sets up the port on which the server is to "listen" (in this case, port 9999) and declares the file *db.js* as required. *db.js* sets up the connection with the Mongo database container. The interactions between the server and the database, stemming from the http requests, are defined under *server/routes/* in the files *all.js* (to get all the links), *update.js* (to update the ratings) and *new.js* (to input the links in the database), and they are powered by Node.js which simulates the runtime environment of the server. These three files also defined the Mongo database that will be used. These interactions are then handled by Mongoose (a library for MongoDB and Node.js) and fetch/change the data in the database accordingly. Therefore, Express.js and Node.js work as the RESTful API of the website.
 
@@ -275,7 +274,7 @@ In order to have the application be runnable from different terminals, Docker wa
 
 Nevertheless, in order to set up all the MEAN stacks (really) features in the terminal being used, a file called *docker-compose.yml* is created, where the Mongo Database is defined and the node.js is set up.
 
-![picture](SystemImplementationImages/FrontEndBackEndSetup.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FrontEndBackEndSetup.png">
 
 Running the command *docker-compose up -d* encompasses the containers defined above, as well as runs the command *Docker build .* in order to read the *Dockerfile* mentioned in *docker-compose.yml* and thus create and save an image of 10-alpine, while setting up all the needed files in the working terminal.
 
@@ -287,8 +286,8 @@ Our group use the agile model and the scrum method. Compared with waterfull mode
 
 Scrum project management involves breaking down a complex project into smaller, more manageable parts known as sprints. You show the project to the client to implement their feedback (if any) at the end of every sprint cycle, and once you get the go-ahead, you move onto the next cycle.
 
-![picture](img/scrum.png)
-![picture](img/agile.png)
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/img/scrum.png">
+<img src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/img/agile.png">
 
 Our group finished daily talk through WhatsApp, and had meeting on Teams if necessary.
 
