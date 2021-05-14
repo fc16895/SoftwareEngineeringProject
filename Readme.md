@@ -24,6 +24,8 @@ This shows that there has been an increase in the variety of information that yo
 
 *CauseVisualiser* therefore seeks to bring the critical mindset vehicled by the reading of many different newspapers back to life, and to bridge the gap between "thing that should be know" and "things that are fun to know", in order to hopefully get younger generations to possess a sufficiently deep knowldedge about serious topics and causes they are interested in so they can make use of a critical mind and reach a balanced, unbiased opinion on the matter. *CauseVisualiser* enables the user to search for a variety of articles about a topic of their choice, then to read them and finally to rate them in terms of how positive the information contained in the article just read is for the cause he believes in/is interested in. Their own, personal and biased point of view is then represented by a chess board where the disposition of the pieces depends on how positive the overall situation around th topic of choice is to the user's eyes. This useful and playful way of viewing a current situation of interest seeks make the activity of documenting oneself about serious topics more fun, and thus to make an intrinsically biased and personal point of view more critical and unbiased.
 
+[The video attached gives a short introduction to the purpose and the functioning of the Single Page Application]()
+
 ### Literature review:
 
 #### Migration of news sources
