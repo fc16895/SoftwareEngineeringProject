@@ -9,6 +9,8 @@ _CauseVisualiser_
 - Tao He
   
 - Felipe Castano
+
+[Here is a link to a file indicating how to render the Website](https://github.com/fc16895/SoftwareEngineeringProject/blob/master/HowToRun.md)
   
 ### Introduction:
 
