@@ -1,5 +1,5 @@
 Run the following commands to run the application:
 
-_git clone [url of the repository]_
+_$git clone [url of the repository]_
 
-_docker-compose up -d_
+_$docker-compose up -d_
