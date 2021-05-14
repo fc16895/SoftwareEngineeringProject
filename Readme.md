@@ -1,4 +1,4 @@
-_CAUSEVISUALISER_
+_CauseVisualiser_
 
 ### Team:
 
