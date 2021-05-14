@@ -358,6 +358,20 @@ Nevertheless, in order to set up all the MEAN stacks features in the terminal be
 
 Running the command *docker-compose up -d* encompasses the containers defined above, as well as runs the command *Docker build .* in order to read the *Dockerfile* mentioned in *docker-compose.yml* and thus create and save an image of 10-alpine, while setting up all the needed files in the working terminal.
 
+### UX Design
+
+#### User stories
+
+When designing CauseVisualiser, our main goal: to make it easier for users to get real and reliable news. At present, most young people's news access channels come from social media on the Internet. These social media have a faster spreading speed and update frequency than traditional publishing organizations. But after the initial focus group discussions and interviews with relatives and friends, we found that users sometimes do not know the authenticity and credibility of the news when facing the amount of news on the Internet. Our single-page application allows users to obtain valuable news content while presenting them with interesting checkerboard patterns to increase the interest and spread of news.
+
+Together we discovered that in the end users will need an attractive and simple user interface to interact. In order to identify potential users, our team spent some time talking with family and friends through informal focus groups and interviews to determine if a user group would use and like the novelty of CauseVisualiser. After talking with family and friends, we started to establish specific end users and create user cases. Here are some examples:
+
+Tao is a college student. He usually likes to watch YouTube current affairs commentary programs and news channels on TV. Tao hopes that there will be a place to freely express his views on the news. CauseVisualiser happens to provide a function for scoring current news reviews.
+
+Linhong is an A-level student. She wants to get reliable and useful news in just 10 minutes every day. She likes to get news from websites and social media. Faced with the overwhelming news on the Internet, I often feel at a loss what to do and don’t know which one to trust. CauseVisualiser can provide news about topics she is interested in.
+
+Liyanbing is a computer science student, and he is also a generation Z. In his spare time, he likes to play steam games. He is not too interested in the news around him. The sense of accomplishment brought by CauseVisualiser's own gameplay helped him get valuable news while having fun.
+
 ### Sprints & Project Management:
 
 #### Group Working Methods
