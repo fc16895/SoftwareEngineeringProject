@@ -75,7 +75,7 @@ Additionally, the education sector has been heavily coupled with gamification te
 
 These areas where gamification has been hugely implemented for the self-improvement of the users seem to have yielded either postive results, or neutral ones.
 
-### Current industry review
+#### Current industry review
 
 Very little to no literature exists on the previous research about the effectiveness of new methods seeking to promote the consumption of news in people. This reinforces the idea of an unstoppable (in the sense that nothing has been done to stop such a trend) change in the source of news, expressed by Mike Vorhaus in [14]: "As newspapers have fallen dramatically in usage, and the national newscasts have dropped in ratings, the swing to new sources of information has accelerated considerably."
 
@@ -94,7 +94,7 @@ However, despite the lack of literature on the results of such habit-promoting a
 
 This, although incomplete, list of current projects aiming at promoting the consumption of news articles points towards the fact that the majority of applications with that aim employ the same three methods described in the *Usage of user representation through gamification for the development of new habits* section. Indeed, *Abridge News* and *Hypothes.is* make use of social interactions with the user's peers through sharing their opinions and takeaways on the articles read. On the other hand, *Knowhere* employs user feedback and reward to encourage the user critical thinking on the different aspects of a news article (author, date, facts included, etc.) as well as the way of organising those deductions made by the user of the website. Finally, *BBC iReporter* and *NewsFeedDefender* have the user follow a "progress path" with different difficulty levels.
 
-### How *CauseVisualiser* lands in the current industry
+#### How *CauseVisualiser* lands in the current industry
 
 The literature review points towards the following problem: nowadays, people, especially younger generations, are consuming news that relate to events and information that are more societal and relating to lifestyle than news about events that can have a major consequence on politics and the world's order. The major consequence of this phenomenon is the downgrading of the population's average literacy on facts that have a direct correlation with the individual's democratic right (and duty) of voting in matters that are affect and are themselves affected by those events.
 
@@ -103,9 +103,9 @@ Following the decrease in literacy on "old-fashioned" news (i.e articles about i
 The challenge that this project represented was that of, first, putting different news articles at the user's disposition following their topic of choice. Additionally, effort had to be made to represent different chess pieces dispositions in accordance to the average rating inputted by the user for each one of the articles relating to their topic of choice. These endeavours were identified as mainly technical ones.
 
 
-#### Technical Timeline
+### Technical Timeline
 
-##### Initial project skeleton
+#### Initial project skeleton
 
 The construction of the Single Page Application (SPA) was first tackled from the Front-End, through the use of the Angular framework. As the project mainly revolved around the concept of links that could display the content of some articles, the *LinksComponent* was created first, alongside an example of a link, with a name and a path pointing towards the picture of the article's content to be displayed with the link. Accordingly, a *Link* interface that was implemented by the *LinksComponent* was also created.
 
@@ -248,7 +248,7 @@ The resulting website's appearance was as shown below:
 <br/>
 
 
-##### Server and database addition
+#### Server and database addition
 
 At the end of the stage shown at the end of the previous section, two different tasks were identified. First, the SPA had to be able to display different chess boards depending on the ratings inputted by the user on each one of the links searched for. However, the API and the database had to be coupled to this initial Angular "skeleton" described in the previous section. Thus, as the boards were going to depend on the value of the ratings and that implied a front-end/back-end communication, the implementation of the chess boards view was left for after the setup of the server and the database.
 
@@ -262,13 +262,13 @@ In oder to set up a connection between the server implemented through Express.js
 
 Following the merging of the rating component into the link interface, the services present at the end of the building phase of the Angular skeleton had to be changed. An *outputService* was implemented, with a *getLinks()* method to obtain all the links whose name matched the string inputted by the user in the dashboard's "search for an article" textbox (thanks to a *search()* method within *dashboard.component.ts*). Additionally, an *updateService* sets all the links to 0 whenever a new article is searched. Finally, *inputService* uses the links stored in *app.component.ts* as a seed to populate the database container when the website is first run.
 
-##### Post-back-end angular modification
+#### Post-back-end angular modification
 
 Once the API and the database were set up, the *BoardsComponent*, whose function was to display a different chess board disposition depending on the averae rating inputted by a user for a specific topic was added to the project. A *getLinks()* method within the *.ts* file would first populate the *links* array, declared as one of the class fields, with the database's links, that were searched for on the dashboard, through the *outputService*. Then, the average rating of for all the links outputted would be calculated and a different image of a chess game layout would be displayed depending on the value of this average.
 
-#### System Implementation
+### System Implementation
 
-##### Stack architecture and flow of data
+#### Stack architecture and flow of data
 
 The project is organised in 4 different parts, each one corresponding to one of the MEAN stacks frameworks.
 
@@ -278,7 +278,7 @@ The project is organised in 4 different parts, each one corresponding to one of 
    </p>
 <br/>
 
-##### Front End
+#### Front End
 
 First, the files that were generated though Angular and whose purpose is to represent the front-end are comprised within the *src/app/* folder. There, the different components (boards, links, link details, dashboard and app) sit. The links and link details components implement the *Link* interface (defined in the file *Links.ts*, within that same path). The *Link* interface comprises the following properties:
 
@@ -325,7 +325,7 @@ Finally, the *LinksComponent* class declares an empty array of links, which is i
 
 The *LinksDetailsComponent* class contains an Input property *Link* (annotated with the decorator *@Input*) so the external *LinksComponent* class can bind to it. This binding enables the details of each link (its rating and image representing the article content) to be enclosed in sub-component separated from the main *link* component, and thus to make the appliciation more manageable.
 
-##### Middle Tier
+#### Middle Tier
 
 - Express, Node, the RESTful API
 
@@ -339,12 +339,12 @@ As explained in the previous section, *inputService* and *updateService* initial
 
 Express.js handles the http requests generated by *inputService* and *updateService*, and those incoming towards *outputService* from port 9999, which acts as an intermediate stage between these services just mentioned and the file *server.js*. The latter declares the type of http requests that will be handled, sets up the port on which the server is to "listen" (in this case, port 9999) and declares the file *db.js* as required. *db.js* sets up the connection with the Mongo database container. The interactions between the server and the database, stemming from the http requests, are defined under *server/routes/* in the files *all.js* (to get all the links), *update.js* (to update the ratings) and *new.js* (to input the links in the database), and they are powered by Node.js which simulates the runtime environment of the server. These three files also define the Mongo database that will be used. These interactions are then handled by Mongoose (a library for MongoDB and Node.js) and fetch/change the data in the database accordingly. Therefore, Express.js and Node.js work as the RESTful API of the website.
 
-##### Back End
+#### Back End
 
 
 The database is set as a container specified in the *docker-compose.yml* file. When the application is started, the *inputService*, followed by the function defined in the *new.js* class populate the database using _app.component.ts_ as seed.
 
-##### Standardised deployment
+#### Standardised deployment
 
 In order to have the application be runnable from different terminals, Docker was used in order to standardise the deployment. First, a *Dockerfile* was created to install an image of 10-alpine, which standardises the operating system. Then, it sets up the working directory, copies all the project files into the terminal being used and runs the command *node server.js*, which runs the whole application, including the express server and all the dependencies mentioned in the previous sections.
 
