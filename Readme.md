@@ -419,4 +419,18 @@ During the sprints, we put our plan to the projects on github, it will show us w
 
 ### Bibliography
 
-1. 
+1. BBC News, Social media 'outstrips TV' as news source for young people, 2016, https://www.bbc.co.uk/news/uk-36528256
+2. Reuters Institure for the Study of Journalism, Oxford University,How Young People Consume News and The Implications For Mainstream Media, 2016 https://reutersinstitute.politics.ox.ac.uk/sites/default/files/2021-02/FlamingoxREUTERS-Report-Full-KG-V28.pdf
+3. The Guardian, TV news faces a threat familiar to newspapers, 2016, https://www.theguardian.com/tv-and-radio/2016/apr/17/tv-news-audience-decline-fast-as-newspaper-circulation-fall#:~:text=%E2%80%9CIn%20the%20UK%2C%20the%20average,years%E2%80%9D%2C%20the%20report%20says.
+4. WakeTeck, “The Decline in Newspapers: A Closer Look” Joseph Ahrens, 2016, https://clubs.waketech.edu/wake-review/magazine/creative-writing/non-fiction/the-decline-in-newspapers-a-closer-look-joseph-ahrens/
+5. The Atlantic, The Facebook Effect on the News, 2014, https://www.theatlantic.com/business/archive/2014/02/the-facebook-effect-on-the-news/283746/
+6. Eli Pariser, The Filter Bubble: What the Internet is hiding from you, 2011, https://hci.stanford.edu/courses/cs047n/readings/The_Filter_Bubble.pdf
+7. Zimmer, Franziska, et al., Fake News in Social Media: Bad Algorithms or Biased Users?, 2019, https://www.koreascience.or.kr/article/JAKO201920461984556.page
+8. Berger, Milkman, What Makes Online Content Viral?, 2012, https://journals.sagepub.com/doi/10.1509/jmr.10.0353
+9. Knolscape, A Brief History on Gamification, 2015, https://www.knolskape.com/brief-history-gamification/
+10. Palmer, Patton, Lunceford, The engagement economy: How gamification is reshaping businesses, https://www2.deloitte.com/us/en/insights/deloitte-review/issue-11/the-engagement-economy-how-gamification-is-reshaping-businesses.html
+11. Johnson, Deterding, et al., Gamification for health and wellbeing: A systematic review of the literature, 2016, https://www.sciencedirect.com/science/article/pii/S2214782916300380
+12. Gonzalez Briones, Chamoso, et al., Use of Gamification Techniques to Encourage Garbage Recycling. A Smart City Approach, 2018, https://www.researchgate.net/publication/326310245_Use_of_Gamification_Techniques_to_Encourage_Garbage_Recycling_A_Smart_City_Approach_13th_International_Conference_KMO_2018_Zilina_Slovakia_August_6-10_2018_Proceedings
+13. Majuri, Koivisto, Gamification of Education and Learning: A Review of Empirical Literature., 2018, https://www.researchgate.net/publication/327438074_Gamification_of_Education_and_Learning_A_Review_of_Empirical_Literature
+14. Forbes, People Increasingly Turn To Social Media For News, 2020, https://www.forbes.com/sites/mikevorhaus/2020/06/24/people-increasingly-turn-to-social-media-for-news/?sh=77ffdc713bcc
+15. common sense education, Best News- and Media-Literacy Resources for Students, https://www.commonsense.org/education/top-picks/best-news-and-media-literacy-resources-for-students
