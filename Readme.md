@@ -303,13 +303,13 @@ The *BoardsComponent* class has an array of links as field, which is initiliased
 
 <br/>
 <p align="center">
-<img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/StartPhase.png">
-<img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FirstPhase.png">
-<img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/SecondPhase.png">
-<img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/ThirdPhase.png">
-<img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FourthPhase.png">
-<img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FifthPhase.png">
-<img align="left" width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FinalPhase.png">
+<img width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/StartPhase.png">
+<img width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FirstPhase.png">
+<img width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/SecondPhase.png">
+<img width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/ThirdPhase.png">
+<img width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FourthPhase.png">
+<img width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FifthPhase.png">
+<img width="100" height="100" src="https://github.com/fc16895/SoftwareEngineeringProject/blob/master/SystemImplementationImages/FinalPhase.png">
   </p>
 <br/>
 
